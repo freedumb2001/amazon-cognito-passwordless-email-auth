@@ -34,4 +34,15 @@
         <a routerLink='/sign-out' routerLinkActive="active">Sign out</a>
     </mat-card-content>
 
+    <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-stroked-button color="primary" (click)="deleteUser()">
+            <div fxFlex></div>
+            <div *ngIf="!(busy | async)">Benutzer löschen / Wiederruf</div>
+            <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+            <div fxFlex></div>
+        </button>
+        <div fxFlex></div>
+    </mat-card-actions>
+
 </mat-card>
