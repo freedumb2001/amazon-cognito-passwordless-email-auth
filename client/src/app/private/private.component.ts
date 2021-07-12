@@ -5,6 +5,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import Auth from '@aws-amplify/auth';
 
 @Component({
   selector: 'app-private',
@@ -24,7 +26,7 @@ export class PrivateComponent implements OnInit {
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
 
-  constructor(private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
     this.getUserDetails();
@@ -44,6 +46,35 @@ export class PrivateComponent implements OnInit {
       this.errorMessage_.next(err.message || err);
     } finally {
       this.busy_.next(false);
+    }
+  }
+
+  public async deleteUser() {
+    this.busy_.next(true);
+    this.errorMessage_.next('');
+    // this.router.navigate(['/sign-out']);
+    try {
+      // const userDetails = await this.auth.getUserDetails();
+      const user = await Auth.currentAuthenticatedUser({
+        bypassCache: true // Optional, By default is false. 
+      })
+      user.deleteUser((error, data) => {
+        if (error) { throw error; }
+        // Do something to delete user data in your system 
+        // Log the user out 
+        this.router.navigate(['/sign-out']);
+      });
+      // this.router.navigate(['/sign-in']);
+      // userDetails.forEach(detail => {
+      //   const control = new FormControl(detail.getValue());
+      //   this.userDetailsForm.addControl(detail.getName(), control);
+      // });
+      // this.userDetails_.next(userDetails);
+    } catch (err) {
+      this.errorMessage_.next(err.message || err);
+    } finally {
+      this.busy_.next(false);
+      this.router.navigate(['/sign-in']);
     }
   }
 }

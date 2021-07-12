@@ -22,6 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const MAT_MODULES = [
@@ -30,6 +32,8 @@ const MAT_MODULES = [
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatCheckboxModule,
   MatIconModule,
 ];
 @NgModule({
