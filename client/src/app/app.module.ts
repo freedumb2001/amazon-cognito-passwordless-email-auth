@@ -25,6 +25,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NotFoundComponent } from './not-found/not-found.component';
+// import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 
 const MAT_MODULES = [
   MatCardModule,
@@ -35,6 +38,7 @@ const MAT_MODULES = [
   MatExpansionModule,
   MatCheckboxModule,
   MatIconModule,
+  MatDialogModule
 ];
 @NgModule({
   declarations: [
@@ -44,9 +48,11 @@ const MAT_MODULES = [
     PrivateComponent,
     AnswerChallengeComponent,
     SignOutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DeleteUserDialog
   ],
   imports: [
+    // NgxExtendedPdfViewerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -56,6 +62,7 @@ const MAT_MODULES = [
     ...MAT_MODULES,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteUserDialog]
 })
 export class AppModule { }

@@ -4,6 +4,10 @@
 -->
 
 <mat-card fxFlex="1 1 auto" ngClass="app-card">
+    <mat-card-content>
+        <!-- <ngx-extended-pdf-viewer [src]="'assets/Expose_2.pdf'" useBrowserLocale="true" height="80vh">
+        </ngx-extended-pdf-viewer> -->
+    </mat-card-content>
 
     <mat-card-header>
         <mat-icon mat-card-avatar>lock</mat-icon>
@@ -36,7 +40,7 @@
 
     <mat-card-actions>
         <div fxFlex></div>
-        <button mat-stroked-button color="primary" (click)="deleteUser()">
+        <button mat-stroked-button color="primary" (click)="openDialog()">
             <div fxFlex></div>
             <div *ngIf="!(busy | async)">Benutzer löschen / Wiederruf</div>
             <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
@@ -44,5 +48,4 @@
         </button>
         <div fxFlex></div>
     </mat-card-actions>
-
 </mat-card>

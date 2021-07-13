@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.component'
 
 @Component({
   selector: 'app-sign-in',
@@ -23,8 +25,16 @@ export class SignInComponent {
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
 
-  constructor(private router: Router, private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
+  openDialog() {
+    const dialogRef = this.dialog.open(DeleteUserDialog);
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(`Dialog result: ${result}`);
+      }
+    });
+  }
   public async signIn() {
     this.busy_.next(true);
     this.errorMessage_.next('');

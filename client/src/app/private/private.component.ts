@@ -7,6 +7,12 @@ import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import Auth from '@aws-amplify/auth';
+// import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
+// import { SES, AWSError } from 'aws-sdk';
+// import { SendEmailRequest, SendEmailResponse } from 'aws-sdk/clients/ses';
+
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.component'
 
 @Component({
   selector: 'app-private',
@@ -26,7 +32,9 @@ export class PrivateComponent implements OnInit {
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
 
-  constructor(private router: Router, private auth: AuthService) { }
+
+  constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
+  // constructor(private router: Router, private auth: AuthService) { pdfDefaultOptions.assetsFolder = '/'; }
 
   ngOnInit() {
     this.getUserDetails();
@@ -47,6 +55,17 @@ export class PrivateComponent implements OnInit {
     } finally {
       this.busy_.next(false);
     }
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DeleteUserDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(`Dialog result: ${result}`);
+        this.deleteUser();
+      }
+    });
   }
 
   public async deleteUser() {
