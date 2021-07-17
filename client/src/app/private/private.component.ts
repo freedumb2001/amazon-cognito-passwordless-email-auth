@@ -10,6 +10,8 @@ import Auth from '@aws-amplify/auth';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.component'
+// import { Expose1Content } from '../expose1-content/expose1-content.component'
+// import { Expose1ContentPdf } from '../expose1-content-pdf/expose1-content-pdf.component'
 
 @Component({
   selector: 'app-private',
