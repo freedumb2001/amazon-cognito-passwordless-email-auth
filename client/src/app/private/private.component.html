@@ -5,11 +5,10 @@
 
 <mat-card fxFlex="1 1 auto" ngClass="app-card">
     <mat-card-content>
-        <!-- <ngx-extended-pdf-viewer [src]="'assets/Expose_2.pdf'" useBrowserLocale="true" height="80vh">
-        </ngx-extended-pdf-viewer> -->
+        <expose1-content-pdf></expose1-content-pdf>
     </mat-card-content>
 
-    <mat-card-header>
+    <!-- <mat-card-header>
         <mat-icon mat-card-avatar>lock</mat-icon>
         <mat-card-title>Private</mat-card-title>
         <mat-card-subtitle>This is the information on your user
@@ -29,14 +28,20 @@
                 <div fxFlex></div>
             </div>
         </form>
-    </mat-card-content>
+    </mat-card-content> -->
 
-    <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+    <mat-divider [inset]="false"></mat-divider>
 
-    <mat-card-content fxLayout="row">
+    <mat-card-actions>
         <div fxFlex></div>
-        <a routerLink='/sign-out' routerLinkActive="active">Sign out</a>
-    </mat-card-content>
+        <button mat-stroked-button color="primary" (click)="signOut()">
+            <div fxFlex></div>
+            <div *ngIf="!(busy | async)">Abmelden</div>
+            <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+            <div fxFlex></div>
+        </button>
+        <div fxFlex></div>
+    </mat-card-actions>
 
     <mat-card-actions>
         <div fxFlex></div>
@@ -48,4 +53,7 @@
         </button>
         <div fxFlex></div>
     </mat-card-actions>
+
+    <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+
 </mat-card>

@@ -7,9 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import Auth from '@aws-amplify/auth';
-// import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
-// import { SES, AWSError } from 'aws-sdk';
-// import { SendEmailRequest, SendEmailResponse } from 'aws-sdk/clients/ses';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.component'
@@ -21,9 +18,11 @@ import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateComponent implements OnInit {
+  // export class PrivateComponent {
 
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
+  public userDetailsObj = {};
   public userDetailsForm = new FormGroup({});
 
   private busy_ = new BehaviorSubject(false);
@@ -32,9 +31,7 @@ export class PrivateComponent implements OnInit {
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
 
-
   constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
-  // constructor(private router: Router, private auth: AuthService) { pdfDefaultOptions.assetsFolder = '/'; }
 
   ngOnInit() {
     this.getUserDetails();
@@ -46,8 +43,9 @@ export class PrivateComponent implements OnInit {
     try {
       const userDetails = await this.auth.getUserDetails();
       userDetails.forEach(detail => {
-        const control = new FormControl(detail.getValue());
-        this.userDetailsForm.addControl(detail.getName(), control);
+        // const control = new FormControl(detail.getValue());
+        // this.userDetailsForm.addControl(detail.getName(), control);
+        this.userDetailsObj[detail.getName()] = detail.getValue();
       });
       this.userDetails_.next(userDetails);
     } catch (err) {
@@ -58,7 +56,11 @@ export class PrivateComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DeleteUserDialog);
+    const dialogRef = this.dialog.open(DeleteUserDialog, {
+      data: {
+        userDetails: this.userDetailsObj
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
@@ -66,6 +68,10 @@ export class PrivateComponent implements OnInit {
         this.deleteUser();
       }
     });
+  }
+
+  public signOut() {
+    this.router.navigate(['/sign-out']);
   }
 
   public async deleteUser() {
@@ -77,11 +83,13 @@ export class PrivateComponent implements OnInit {
       const user = await Auth.currentAuthenticatedUser({
         bypassCache: true // Optional, By default is false. 
       })
-      user.deleteUser((error, data) => {
+      // user.deleteUser((error, data) => {
+      user.deleteUser((error, _) => {
         if (error) { throw error; }
         // Do something to delete user data in your system 
         // Log the user out 
-        this.router.navigate(['/sign-out']);
+        // this.router.navigate(['/sign-out']);
+        this.signOut();
       });
       // this.router.navigate(['/sign-in']);
       // userDetails.forEach(detail => {

@@ -21,7 +21,7 @@
 /*
 .mat-content > mat-panel-title, .mat-content > mat-panel-description {
 */
-   mat-panel-description {
-    flex: 0 0 auto;
-    color: red;
-  }
+mat-panel-description {
+   flex: 0 0 auto;
+   color: red;
+}

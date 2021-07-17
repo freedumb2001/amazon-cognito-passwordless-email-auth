@@ -7,20 +7,20 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
 
-function emailDomainValidator(control: FormControl) {
-  let email = control.value;
-  if (email && email.indexOf("@") != -1) {
-    let [_, domain] = email.split("@");
-    if (domain !== "codecraft.tv") {
-      return {
-        emailDomain: {
-          parsedDomain: domain
-        }
-      }
-    }
-  }
-  return null;
-}
+// function emailDomainValidator(control: FormControl) {
+//   let email = control.value;
+//   if (email && email.indexOf("@") != -1) {
+//     let [_, domain] = email.split("@");
+//     if (domain !== "codecraft.tv") {
+//       return {
+//         emailDomain: {
+//           parsedDomain: domain
+//         }
+//       }
+//     }
+//   }
+//   return null;
+// }
 
 @Component({
   selector: 'app-sign-up',
@@ -30,11 +30,12 @@ function emailDomainValidator(control: FormControl) {
 })
 export class SignUpComponent {
 
-  givenName = new FormControl('', Validators.required,);
-  familyName = new FormControl('', Validators.required,);
+  // givenName = new FormControl('', Validators.required,);
+  // familyName = new FormControl('', Validators.required,);
+  fullName = new FormControl('', Validators.required,);
   email = new FormControl('', [
     Validators.required,
-    // Validators.pattern("[^ @]*@[^ @]*"),
+    Validators.pattern("[^ @]*@[^ @]*"),
     // emailDomainValidator
   ]);
 
@@ -55,16 +56,10 @@ export class SignUpComponent {
   constructor(private router: Router, private auth: AuthService) { }
 
   public async signup() {
-    // let fe = false;
-    // if (this.widerrufsbelehrung.invalid) { this.widerrufsbelehrung.markAsDirty(); fe = true }
-    // if (this.provisionspflichtig.invalid) { this.provisionspflichtig.markAsDirty(); fe = true }
-    // if (this.zugriff.invalid) { this.zugriff.markAsDirty(); fe = true }
-    // if (this.givenName.invalid) { this.givenName.markAsDirty(); fe = true }
-    // if (this.email.invalid) { this.email.markAsDirty(); fe = true }
-    // if (fe) { return };
 
     // TODO create formgroup
-    let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.givenName, this.familyName]
+    // let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.givenName, this.familyName]
+    let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.fullName]
 
     for (let c of fc) {
       if (c.invalid) { c.markAsDirty() }
@@ -77,9 +72,8 @@ export class SignUpComponent {
     this.errorMessage_.next('');
     this.busy_.next(true);
     try {
-      // this.email.valid;
       console.log(this.email.valid);
-      await this.auth.signUp(this.email.value, this.givenName.value);
+      await this.auth.signUp(this.email.value, this.fullName.value);
       await this.auth.signIn(this.email.value);
       this.router.navigate(['/enter-secret-code']);
     } catch (err) {

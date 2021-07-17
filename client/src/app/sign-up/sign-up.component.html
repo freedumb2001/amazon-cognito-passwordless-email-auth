@@ -7,15 +7,15 @@
 
   <mat-card-header>
     <mat-icon mat-card-avatar>lock</mat-icon>
-    <mat-card-title>Please Sign Up</mat-card-title>
-    <mat-card-subtitle>We'd be happy to have you on board!</mat-card-subtitle>
+    <mat-card-title>Bitte registrieren Sie sich</mat-card-title>
+    <mat-card-subtitle>Danach erhalten Sie Zugriff auf das Exposé</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     <h4>Provisionshinweis</h4>
     <p>
-      Um das vollständige Angebot einsehen zu können ist Ihre Zustimmung notwendig.
-      Genaue Angaben zur Provision entnehmen Sie bitte der zu tätigenden Einwilligung (Checkbox).
+      Um das vollständige Exposé einsehen zu können, ist Ihre Zustimmung notwendig.
+      Die genaue Angaben zur Provision entnehmen Sie bitte der erforderlichen Einwilligung (Checkbox weiter unten).
     </p>
     <h4>Widerrufsbelehrung</h4>
     <mat-expansion-panel [expanded]="true" (opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false">
@@ -34,12 +34,11 @@
       </p>
       <p>
         Um Ihr Widerrufsrecht auszuüben, müssen Sie uns<br>
-        xxxx<br>
-        xxxx<br>
-        xxxx<br>
-        Tel.: +49 xxxx<br>
-        Fax: +49 xxxx<br>
-        E-Mail: xxxx<br>
+        Planungsbüro G. Schulz<br>
+        An der Pferdekoppel 3<br>
+        23972 Dorf Mecklenburg<br>
+        Tel./Fax/Mobil.: 03841/6206611<br>
+        E-Mail: ostsee@planungsbuero-schulz.de<br>
         mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter
         Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu
         widerrufen, informieren. Sie können dafür das beigefügte
@@ -47,7 +46,9 @@
         vorgeschrieben ist.
       </p>
       <p>
-        Alternativ können Sie auch nach der Anmeldung den entsprechenden Knopf "Wiederrufen und Abmelden" klicken und
+        Alternativ können Sie auch nach der Anmeldung den entsprechenden Knopf "Vertrag Widerrufen / Nutzerdaten
+        löschen" klicken
+        und
         somit formlos
         von Ihrem Widerrufsrecht gebrauch machen.<br>
       </p>
@@ -117,10 +118,17 @@
       <p>
         (*) Unzutreffendes bitte streichen
       </p>
+      <p>
+        Alternativ können Sie auch nach der Anmeldung den entsprechenden Knopf "Benutzer löschen / Wiederruf" klicken
+        und
+        somit formlos
+        von Ihrem Widerrufsrecht gebrauch machen.<br>
+      </p>
     </mat-expansion-panel>
 
 
     <form fxLayout="column">
+      <br><br>
       <mat-checkbox [formControl]="widerrufsbelehrung" required class="form-check-input"><span>* </span>Ich habe die
         Widerrufsbelehrung
         vollständig gelesen
@@ -134,7 +142,7 @@
           <div><span>* </span>Die angebotene Immobilie ist provisionspflichtig. Mit dem
             Anklicken
             dieser Checkbox
-            bestätige ich den Provisionshinweis und bezahle für den Fall, dass ich diese Immobiele
+            bestätige ich den Provisionshinweis und bezahle für den Fall, dass ich diese Immobilie
             erweben werde eine Provision in Höhe von 3,0% Käufer-Provision inkl. MwSt vom Kaufpreis,
             verdient und Fällig bei notarieller Beurkundung.</div>
         </mat-checkbox>
@@ -154,31 +162,27 @@
         <p *ngIf="zugriff.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
       </mat-error>
       <mat-form-field>
-        <input matInput placeholder="Vorname" [formControl]="givenName" name="given-name" autocomplete="given-name"
+        <input matInput placeholder="Name" [formControl]="fullName" name="full-name" autocomplete="full-name"
           required />
       </mat-form-field>
-      <mat-error class="form-control-feedback" *ngIf="givenName.errors && (givenName.dirty || givenName.touched)">
-        <p *ngIf="givenName.errors.required">Die Vor- und Nachname muss angegeben werden.</p>
-        <p *ngIf="givenName.errors.pattern">The email address must contain at least the @ character</p>
-        <p *ngIf="givenName.errors.emailDomain">Email must be on the codecraft.tv domain</p>
+      <mat-error class="form-control-feedback" *ngIf="fullName.errors && (fullName.dirty || fullName.touched)">
+        <p *ngIf="fullName.errors.required">Der Name muss angegeben werden.</p>
       </mat-error>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <input matInput placeholder="Nachname" [formControl]="familyName" name="family-name" autocomplete="family-name"
           required />
       </mat-form-field>
       <mat-error class="form-control-feedback" *ngIf="familyName.errors && (familyName.dirty || familyName.touched)">
-        <p *ngIf="familyName.errors.required">Die Vor- und Nachname muss angegeben werden.</p>
-        <p *ngIf="familyName.errors.pattern">The email address must contain at least the @ character</p>
-        <p *ngIf="familyName.errors.emailDomain">Email must be on the codecraft.tv domain</p>
-      </mat-error>
+        <p *ngIf="familyName.errors.required">Der Nachname muss angegeben werden.</p>
+      </mat-error> -->
       <mat-form-field>
         <input matInput placeholder="E-mail" [formControl]="email" type="email" email name="email"
           autocomplete="username email" ngModel [email]="true" required />
       </mat-form-field>
       <mat-error class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
         <p *ngIf="email.errors.required">Die E-Mail muss angegeben werden.</p>
-        <p *ngIf="email.errors.pattern">The email address must contain at least the @ character</p>
-        <p *ngIf="email.errors.emailDomain">Email must be on the codecraft.tv domain</p>
+        <p *ngIf="email.errors.pattern">The E-Mail-Adresse muss mindestens das @-Zeichen enthalten.</p>
+        <!-- <p *ngIf="email.errors.emailDomain">Email must be on the codecraft.tv domain</p> -->
       </mat-error>
     </form>
   </mat-card-content>
@@ -198,7 +202,7 @@
 
   <mat-card-content>
     <div fxFlex></div>
-    <p>Schon registriert? <a routerLink='/sign-in' routerLinkActive="active">Sign in</a></p>
+    <p>Schon registriert? <a routerLink='/sign-in' routerLinkActive="active">Anmelden</a></p>
   </mat-card-content>
 
 </mat-card>

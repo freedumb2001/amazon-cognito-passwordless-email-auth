@@ -7,8 +7,10 @@
 
   <mat-card-header>
     <mat-icon mat-card-avatar>lock</mat-icon>
-    <mat-card-title>Please Sign In</mat-card-title>
-    <mat-card-subtitle>Enter your e-mail address and we'll send you a one-time secret sign-in code</mat-card-subtitle>
+    <mat-card-title>Bitte melden Sie sich an</mat-card-title>
+    <!-- <mat-card-subtitle>Enter your e-mail address and we'll send you a one-time secret sign-in code</mat-card-subtitle> -->
+    <mat-card-subtitle>Geben Sie ihre E-Mail-Adresse an und erhalten Sie einen einmaligen Anmeldecode
+    </mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
@@ -24,7 +26,7 @@
     <div fxFlex></div>
     <button mat-stroked-button color="primary" (click)="signIn()" [disabled]="(busy | async)">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">SEND SIGN-IN CODE</div>
+      <div *ngIf="!(busy | async)">Anmeldecode senden</div>
       <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>
@@ -35,8 +37,15 @@
 
   <mat-card-content>
     <div fxFlex></div>
-    <p>Not a member yet? <a routerLink='/sign-up' routerLinkActive="active">Sign up</a></p>
+    <p>Sie haben sich noch nicht registriert? <a routerLink='/sign-up' routerLinkActive="active">Hier registrieren</a>
+    </p>
   </mat-card-content>
-  <button mat-button (click)="openDialog()">Open dialog</button>
+  <mat-card-content>
+    <div fxFlex></div>
+
+    <p>
+      <a href='https://planungsbuero-schulz.de/#kontakt-impressum'>Impressum</a>
+    </p>
+  </mat-card-content>
 
 </mat-card>
