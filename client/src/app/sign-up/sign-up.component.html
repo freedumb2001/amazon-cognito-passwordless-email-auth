@@ -161,6 +161,7 @@
       <mat-error class="form-control-feedback" *ngIf="zugriff.errors && (zugriff.dirty || zugriff.touched)">
         <p *ngIf="zugriff.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
       </mat-error>
+      <br>
       <mat-form-field>
         <input matInput placeholder="Name" [formControl]="fullName" name="full-name" autocomplete="full-name"
           required />

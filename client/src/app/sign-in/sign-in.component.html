@@ -6,10 +6,30 @@
 <mat-card fxFlex="1 1 auto" ngClass="app-card">
 
   <mat-card-header>
-    <mat-icon mat-card-avatar>lock</mat-icon>
-    <mat-card-title>Bitte melden Sie sich an</mat-card-title>
+    <!-- <mat-icon mat-card-avatar>lock</mat-icon> -->
+    <mat-card-title>Noch nicht registriert?</mat-card-title>
+    <mat-card-subtitle>Um Zugang zum Exposé zu erhalten, müssen Sie zunächst den Nutzugsbedingungen zustimmen und sich
+      registrieren.
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <div fxFlex></div>
+    <button mat-stroked-button color="primary" (click)="signUp()" [disabled]="(busy | async)">
+      <div fxFlex></div>
+      <div *ngIf="!(busy | async)">Registrieren</div>
+      <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+      <div fxFlex></div>
+    </button>
+    <div fxFlex></div>
+  </mat-card-actions>
+  <br><br>
+  <mat-card-header>
+    <!-- <mat-icon mat-card-avatar>lock</mat-icon> -->
+    <mat-card-title>Schon registriert? Bitte melden Sie sich an.</mat-card-title>
     <!-- <mat-card-subtitle>Enter your e-mail address and we'll send you a one-time secret sign-in code</mat-card-subtitle> -->
-    <mat-card-subtitle>Geben Sie ihre E-Mail-Adresse an und erhalten Sie einen einmaligen Anmeldecode
+    <mat-card-subtitle>Wenn Sie schon registriert sind, geht es hier direkt zum Exposé. Geben Sie ihre E-Mail-Adresse an
+      und erhalten Sie einen einmaligen Anmeldecode.
     </mat-card-subtitle>
   </mat-card-header>
 
@@ -35,11 +55,11 @@
 
   <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
-  <mat-card-content>
+  <!-- <mat-card-content>
     <div fxFlex></div>
     <p>Sie haben sich noch nicht registriert? <a routerLink='/sign-up' routerLinkActive="active">Hier registrieren</a>
     </p>
-  </mat-card-content>
+  </mat-card-content> -->
   <mat-card-content>
     <div fxFlex></div>
 

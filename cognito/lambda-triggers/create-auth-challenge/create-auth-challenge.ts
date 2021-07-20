@@ -48,7 +48,8 @@ async function sendEmail(emailAddress: string, secretLoginCode: string) {
             Body: {
                 Html: {
                     Charset: 'UTF-8',
-                    Data: `<html><body><p>This is your secret login code:</p>
+                    // Data: `<html><body><p>This is your secret login code:</p>
+                    Data: `<html><body><p>Das ist ihr 6-stelliger Anmeldecode:</p>
                            <h3>${secretLoginCode}</h3></body></html>`
                 },
                 Text: {

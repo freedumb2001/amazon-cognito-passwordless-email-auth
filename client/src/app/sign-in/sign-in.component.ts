@@ -25,6 +25,18 @@ export class SignInComponent {
 
   constructor(private router: Router, private auth: AuthService) { }
 
+  public async signUp() {
+    this.busy_.next(true);
+    this.errorMessage_.next('');
+    try {
+      this.router.navigate(['/sign-up']);
+    } catch (err) {
+      this.errorMessage_.next(err.message || err);
+    } finally {
+      this.busy_.next(false);
+    }
+  }
+
   public async signIn() {
     this.busy_.next(true);
     this.errorMessage_.next('');
