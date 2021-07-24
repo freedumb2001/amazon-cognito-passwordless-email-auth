@@ -21,9 +21,28 @@ input[type="text"] {
 
 /* .app-card {
     max-width: 400px;
+    box-shadow:  none;
 } */
 
 app-private{
     width: 80%;
+    box-shadow:  none;
   }
 
+.mat-card-content, .mat-card-subtitle {
+    font-size: 16px;
+}
+
+.mat-card-header-text{
+    margin: 0 0 0 0 !important;
+}
+
+.custom.mat-card{
+    background-color: #e3f8ff;
+    padding: 32px 16px 32px 16px !important;
+}
+
+.grid-layout-custom{
+    width: 80vw;
+    height: 80vh;
+  }

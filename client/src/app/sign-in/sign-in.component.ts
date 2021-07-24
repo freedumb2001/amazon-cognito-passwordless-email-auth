@@ -14,11 +14,14 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignInComponent {
-
+  buttonColor1 = "primary";
+  buttonColor2 = "primary";
   public email = new FormControl('');
 
-  private busy_ = new BehaviorSubject(false);
-  public busy = this.busy_.asObservable();
+  private busy1_ = new BehaviorSubject(false);
+  public busy1 = this.busy1_.asObservable();
+  private busy2_ = new BehaviorSubject(false);
+  public busy2 = this.busy2_.asObservable();
 
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
@@ -26,19 +29,19 @@ export class SignInComponent {
   constructor(private router: Router, private auth: AuthService) { }
 
   public async signUp() {
-    this.busy_.next(true);
+    this.busy1_.next(true);
     this.errorMessage_.next('');
     try {
       this.router.navigate(['/sign-up']);
     } catch (err) {
       this.errorMessage_.next(err.message || err);
     } finally {
-      this.busy_.next(false);
+      this.busy1_.next(false);
     }
   }
 
   public async signIn() {
-    this.busy_.next(true);
+    this.busy2_.next(true);
     this.errorMessage_.next('');
     try {
       await this.auth.signIn(this.email.value);
@@ -46,7 +49,7 @@ export class SignInComponent {
     } catch (err) {
       this.errorMessage_.next(err.message || err);
     } finally {
-      this.busy_.next(false);
+      this.busy2_.next(false);
     }
   }
 }

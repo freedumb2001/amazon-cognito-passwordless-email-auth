@@ -1,39 +1,49 @@
 <!--
    Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   SPDX-License-Identifier: MIT-0
+   SPDX-License-Identifier: MIT-0 x
 -->
-
-<mat-card fxFlex="1 1 auto" ngClass="app-card">
+<!-- <mat-grid-list cols="1" rowHeight="fit" class="grid-layout-custom"> -->
+<!-- <mat-grid-tile> -->
+<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
 
   <mat-card-header>
     <!-- <mat-icon mat-card-avatar>lock</mat-icon> -->
     <mat-card-title>Noch nicht registriert?</mat-card-title>
-    <mat-card-subtitle>Um Zugang zum Exposé zu erhalten, müssen Sie zunächst den Nutzugsbedingungen zustimmen und sich
+    <mat-card-subtitle>Um Zugang zum Exposé zu erhalten, müssen Sie zunächst den Nutzugsbedingungen zustimmen und
+      sich
       registrieren.
     </mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-actions>
     <div fxFlex></div>
-    <button mat-stroked-button color="primary" (click)="signUp()" [disabled]="(busy | async)">
+    <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
+      (mouseout)="buttonColor1 = 'primary'" (click)="signUp()" [disabled]="(busy1 | async)">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">Registrieren</div>
-      <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+      <div *ngIf="!(busy1 | async)">Jetzt Registrieren</div>
+      <mat-spinner *ngIf="busy1 | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>
     <div fxFlex></div>
   </mat-card-actions>
-  <br><br>
+</mat-card>
+<!-- </mat-grid-tile> -->
+<!-- <mat-grid-tile> -->
+<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
   <mat-card-header>
     <!-- <mat-icon mat-card-avatar>lock</mat-icon> -->
     <mat-card-title>Schon registriert? Bitte melden Sie sich an.</mat-card-title>
     <!-- <mat-card-subtitle>Enter your e-mail address and we'll send you a one-time secret sign-in code</mat-card-subtitle> -->
-    <mat-card-subtitle>Wenn Sie schon registriert sind, geht es hier direkt zum Exposé. Geben Sie ihre E-Mail-Adresse an
+    <mat-card-subtitle>Wenn Sie schon registriert sind, geht es hier direkt zum Exposé. Geben Sie ihre
+      E-Mail-Adresse
+      an
       und erhalten Sie einen einmaligen Anmeldecode.
     </mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
+    <!-- <form fxLayout="row" fxLayoutAlign="center stretch"> -->
+    <!-- <form fxLayout="column" [style.margin]="'0 16px 0 16px'"> -->
     <form fxLayout="column">
       <mat-form-field>
         <input matInput placeholder="E-mail" [formControl]="email" type="email" email name="email"
@@ -44,10 +54,11 @@
 
   <mat-card-actions>
     <div fxFlex></div>
-    <button mat-stroked-button color="primary" (click)="signIn()" [disabled]="(busy | async)">
+    <button mat-raised-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
+      (mouseout)="buttonColor2 = 'primary'" (click)="signIn()" [disabled]="(busy2 | async)">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">Anmeldecode senden</div>
-      <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+      <div *ngIf="!(busy2 | async)">Anmelden</div>
+      <mat-spinner *ngIf="busy2 | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>
     <div fxFlex></div>
@@ -69,3 +80,5 @@
   </mat-card-content>
 
 </mat-card>
+<!-- </mat-grid-tile> -->
+<!-- </mat-grid-list> -->

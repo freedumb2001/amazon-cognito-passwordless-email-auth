@@ -3,7 +3,7 @@
    SPDX-License-Identifier: MIT-0
 -->
 
-<mat-card fxFlex="1 1 auto" ngClass="app-card" class="app-card">
+<mat-card class="mat-elevation-z0 custom" fxFlex="1 1 auto" ngClass="app-card" class="app-card">
 
   <mat-card-header>
     <mat-icon mat-card-avatar>lock</mat-icon>
@@ -129,7 +129,8 @@
 
     <form fxLayout="column">
       <br><br>
-      <mat-checkbox [formControl]="widerrufsbelehrung" required class="form-check-input"><span>* </span>Ich habe die
+      <mat-checkbox [formControl]="widerrufsbelehrung" color="primary" required class="form-check-input"><span>*
+        </span>Ich habe die
         Widerrufsbelehrung
         vollständig gelesen
         und verstanden.</mat-checkbox>
@@ -138,7 +139,7 @@
         <p *ngIf="widerrufsbelehrung.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
       </mat-error>
       <span>
-        <mat-checkbox [formControl]="provisionspflichtig" required>
+        <mat-checkbox [formControl]="provisionspflichtig" color="primary" required>
           <div><span>* </span>Die angebotene Immobilie ist provisionspflichtig. Mit dem
             Anklicken
             dieser Checkbox
@@ -151,7 +152,8 @@
           <p *ngIf="provisionspflichtig.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
         </mat-error>
       </span>
-      <mat-checkbox [formControl]="zugriff" required>* Ich bin einverstanden und verlange ausdrücklich, dass
+      <mat-checkbox [formControl]="zugriff" color="primary" required>* Ich bin einverstanden und verlange ausdrücklich,
+        dass
         Sie mir
         Zugriff auf das Exposé vor Ende der Widerrufsfrist gewähren und damit
         mit der Ausführung der beauftragten Dienstleistung beginnen.
@@ -190,9 +192,10 @@
 
   <mat-card-actions>
     <div fxFlex></div>
-    <button mat-stroked-button color="primary" (click)="signup()">
+    <button mat-raised-button [color]="buttonColor" (mouseover)="buttonColor = 'accent'"
+      (mouseout)="buttonColor = 'primary'" (click)="signup()">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">Registrieren</div>
+      <div *ngIf="!(busy | async)">Registrierung abschliessen</div>
       <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>

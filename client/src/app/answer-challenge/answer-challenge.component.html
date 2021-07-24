@@ -3,7 +3,7 @@
    SPDX-License-Identifier: MIT-0
 -->
 
-<mat-card fxFlex="1 1 auto" ngClass="app-card">
+<mat-card class="mat-elevation-z0 custom" fxFlex="1 1 auto" ngClass="app-card">
 
   <mat-card-header>
     <mat-icon mat-card-avatar>lock</mat-icon>
@@ -39,7 +39,8 @@
 
   <mat-card-actions>
     <div fxFlex></div>
-    <button mat-stroked-button color="primary" (click)="submit()">
+    <button mat-raised-button [color]="buttonColor" (mouseover)="buttonColor = 'accent'"
+      (mouseout)="buttonColor = 'primary'" (click)="submit()">
       <div fxFlex></div>
       <div *ngIf="!(busy | async)">CONTINUE</div>
       <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>

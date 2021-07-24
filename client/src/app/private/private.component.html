@@ -3,7 +3,7 @@
    SPDX-License-Identifier: MIT-0
 -->
 
-<mat-card fxFlex="1 1 auto" ngClass="app-card">
+<mat-card class="mat-elevation-z0 custom" fxFlex="1 1 auto" ngClass="app-card">
     <mat-card-content>
         <expose1-content-pdf></expose1-content-pdf>
     </mat-card-content>
@@ -34,7 +34,8 @@
 
     <mat-card-actions>
         <div fxFlex></div>
-        <button mat-stroked-button color="primary" (click)="signOut()">
+        <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
+            (mouseout)="buttonColor1 = 'primary'" (click)="signOut()">
             <div fxFlex></div>
             <div *ngIf="!(busy | async)">Abmelden</div>
             <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
@@ -45,7 +46,8 @@
 
     <mat-card-actions>
         <div fxFlex></div>
-        <button mat-stroked-button color="primary" (click)="openDialog()">
+        <button mat-raised-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
+            (mouseout)="buttonColor2 = 'primary'" (click)="openDialog()">
             <div fxFlex></div>
             <div *ngIf="!(busy | async)">Benutzer löschen / Wiederruf</div>
             <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>

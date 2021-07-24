@@ -20,8 +20,10 @@ import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateComponent implements OnInit {
+  buttonColor1 = "primary";
+  buttonColor2 = "primary";
   // export class PrivateComponent {
-
+  buttonColor = "primary";
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};

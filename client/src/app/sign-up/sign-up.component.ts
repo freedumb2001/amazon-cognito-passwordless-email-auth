@@ -29,7 +29,7 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignUpComponent {
-
+  buttonColor = "primary";
   // givenName = new FormControl('', Validators.required,);
   // familyName = new FormControl('', Validators.required,);
   fullName = new FormControl('', Validators.required,);

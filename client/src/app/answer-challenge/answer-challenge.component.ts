@@ -15,7 +15,7 @@ import { tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnswerChallengeComponent implements OnInit, OnDestroy, AfterContentInit {
-
+  buttonColor = "primary";
   digit1 = new FormControl('');
   digit2 = new FormControl('');
   digit3 = new FormControl('');
