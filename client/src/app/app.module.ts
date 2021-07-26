@@ -29,6 +29,8 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component'
 import { TitleCard } from './title-card/title-card'
@@ -44,7 +46,8 @@ const MAT_MODULES = [
   MatIconModule,
   MatDialogModule,
   MatDividerModule,
-  MatGridListModule
+  MatGridListModule,
+  MatTabsModule
 ];
 @NgModule({
   declarations: [
