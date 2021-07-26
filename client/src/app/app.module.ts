@@ -31,6 +31,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component'
+import { TitleCard } from './title-card/title-card'
 
 const MAT_MODULES = [
   MatCardModule,
@@ -55,7 +56,8 @@ const MAT_MODULES = [
     SignOutComponent,
     NotFoundComponent,
     DeleteUserDialog,
-    Expose1ContentPdf
+    Expose1ContentPdf,
+    TitleCard
   ],
   imports: [
     NgxExtendedPdfViewerModule,

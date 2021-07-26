@@ -4,8 +4,15 @@
 */
 
 .main {
-    min-height: 85vh;
+    /* background-color: red; */
+    /* border-style: solid; */
+    /* border-color: red; */
+    /* min-height: 95vh; */
+    min-height:85vh; 
+    /* max-height:95vh; */
+    /* height: 100vh; */
+
     min-width: 100%;
     top: 10px;
-    bottom: 10px;
+    /* bottom: 10px; */
 }
