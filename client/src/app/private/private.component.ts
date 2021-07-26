@@ -22,8 +22,11 @@ import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.compo
 export class PrivateComponent implements OnInit {
   buttonColor1 = "primary";
   buttonColor2 = "primary";
-  // export class PrivateComponent {
-  buttonColor = "primary";
+
+  pdfButtonColor1 = "basic";
+  pdfButtonColor2 = "basic";
+
+  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};
@@ -39,6 +42,14 @@ export class PrivateComponent implements OnInit {
 
   ngOnInit() {
     this.getUserDetails();
+  }
+
+  public pdf1() {
+    this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
+  }
+
+  public pdf2() {
+    this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
   }
 
   public async getUserDetails() {

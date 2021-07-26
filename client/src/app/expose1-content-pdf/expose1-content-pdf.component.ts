@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 
 @Component({
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
     templateUrl: 'expose1-content-pdf.component.html',
 })
 export class Expose1ContentPdf {
+    @Input() pdfSrc: string;
+    constructor() { }
+    // pfdSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
     // constructor() { pdfDefaultOptions.assetsFolder = '/'; }
 }
+
