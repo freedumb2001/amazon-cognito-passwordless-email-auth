@@ -43,7 +43,7 @@
     <button mat-raised-button [color]="buttonColor" (mouseover)="buttonColor = 'accent'"
       (mouseout)="buttonColor = 'primary'" (click)="submit()">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">CONTINUE</div>
+      <div *ngIf="!(busy | async)">Weiter</div>
       <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>
