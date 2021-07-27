@@ -25,10 +25,15 @@ input[type="text"] {
     box-shadow:  none;
 } */
 
-/* app-private{
-    width: 80%;
-    box-shadow:  none;
-  } */
+app-private{
+    width: 100%;
+    /* box-shadow:  none; */
+  }
+
+.main{
+    width: 100%;
+    /* box-shadow:  none; */
+  }
 
 .mat-card-content, .mat-card-subtitle {
     font-size: 16px;
