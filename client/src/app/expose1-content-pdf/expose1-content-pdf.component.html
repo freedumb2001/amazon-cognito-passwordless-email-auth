@@ -1,18 +1,5 @@
-<ngx-extended-pdf-viewer [(src)]="pdfSrc" [showPrintButton]="false" [showDownloadButton]="false"
-    [showOpenFileButton]="false" useBrowserLocale="true" height="95vh" width="100%">
+<ngx-extended-pdf-viewer [(src)]="pdfSrc" [pageViewMode]="'infinite-scroll'" [useBrowserLocale]="true"
+    [textLayer]="false" [showHandToolButton]="false" [showToolbar]="false" [sidebarVisible]="false"
+    [zoom]="'page-width'" (pageRendered)="onPagesRendered($event)" (pdfLoaded)="pdfLoaded( $event)"
+    (pagesLoaded)="onPagesLoaded($event)" [enablePinchOnMobile]="true" useBrowserLocale="true" width="100%">
 </ngx-extended-pdf-viewer>
-
-<!-- betriebsrat der kündigung
-
-
-gerne gearbeitet habe und auch gerne weitergemacht hätte
-
-verhältnis ist zerrüttet duch wiedersprüchlichen aussagen
-
-verträgt scht nicht mit der darstellung iminteret und nach aussen
-
-das es mir sehr schwer fällt weiter zu arbeiten
-
-
-
-morgen  -->

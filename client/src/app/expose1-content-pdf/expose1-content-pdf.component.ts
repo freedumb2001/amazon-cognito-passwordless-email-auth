@@ -10,5 +10,16 @@ export class Expose1ContentPdf {
     constructor() { }
     // pfdSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
     // constructor() { pdfDefaultOptions.assetsFolder = '/'; }
+
+    public onPagesLoaded(event) {
+        console.log("PAGES LOADED", event)
+    }
+
+    public onPagesRendered(event) {
+        console.log("PAGES RENDERED", event)
+    }
+    public pdfLoaded(event) {
+        console.log("PDF LOADED", event)
+    }
 }
 
