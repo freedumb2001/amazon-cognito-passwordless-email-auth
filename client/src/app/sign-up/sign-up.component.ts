@@ -6,6 +6,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
+import { GlobalConstants } from '../common/global-constants';
 
 // function emailDomainValidator(control: FormControl) {
 //   let email = control.value;
@@ -38,7 +39,7 @@ export class SignUpComponent {
     Validators.pattern("[^ @]*@[^ @]*"),
     // emailDomainValidator
   ]);
-
+  wiederrufButtonText = GlobalConstants.wiederrufButtonText;
   widerrufsbelehrung = new FormControl('', [Validators.required]);
   provisionspflichtig = new FormControl('', [Validators.required]);
   zugriff = new FormControl('', [Validators.required]);

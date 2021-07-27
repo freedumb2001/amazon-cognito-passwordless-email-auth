@@ -2,10 +2,10 @@
    Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    SPDX-License-Identifier: MIT-0
 */
-/* .example-spacer {
+.example-spacer {
    flex: 1 1 auto;
  }
- .mat-divider {
+ /* .mat-divider {
    border-top-width: 50px;
    border-top-style: solid;
 } */

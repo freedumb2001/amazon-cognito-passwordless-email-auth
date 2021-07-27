@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GlobalConstants } from '../common/global-constants';
 import Auth from '@aws-amplify/auth';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -20,13 +21,12 @@ import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateComponent implements OnInit {
-  buttonColor1 = "primary";
-  buttonColor2 = "primary";
+  buttonColor1 = "basic";
+  buttonColor2 = "basic";
 
-  pdfButtonColor1 = "basic";
-  pdfButtonColor2 = "basic";
+  wiederrufButtonText = GlobalConstants.wiederrufButtonText;
 
-  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};

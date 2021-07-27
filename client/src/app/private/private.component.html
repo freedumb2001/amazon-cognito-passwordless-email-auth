@@ -3,17 +3,18 @@
    SPDX-License-Identifier: MIT-0
 -->
 <title-card></title-card>
-<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
+<br>
+<mat-card class="" ngClass="app-card">
 
-    <mat-card-content> Zum Verkauf stehen zwei aneinander angrenzende besondere Objekte in Strandnähe (250m).
-        Das erste Objekt ist ein mit einem Wohnhaus bebautes 500qm Grundstück.
+    <mat-card-content> Zum Verkauf stehen zwei aneinander angrenzende Objekte in Strandnähe (250m).
+        Das erste Objekt ist ein mit einem Wohnhaus bebautes 500qm großes Grundstück.
         Direkt angrenzend befindest sich die zweite Immobilie, ein ebenfalls 500qm Grundstück. Dieses ist noch
         unbebaut.
+        <br>
+        <br>
+        Bitte haben Sie etwas Geduld, das Laden des Exposés kann einige Sekunden in Anspruch nehmen.
     </mat-card-content>
-</mat-card>
 
-<!-- <mat-card class="mat-elevation-z0 custom" fxFlex="1 1 auto" ngClass="app-card"> -->
-<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
     <!-- <mat-toolbar>
         <button mat-raised-button [color]="pdfButtonColor1" (click)="pdf1()" class="pdf-button"
             aria-label="1 Grundstück + Haus Exposé laden">
@@ -30,6 +31,28 @@
             <mat-button-toggle (click)="pdf1()" value="immo1">Gründstück + Haus</mat-button-toggle>
             <mat-button-toggle (click)="pdf2()" value="immo2">Gründstück</mat-button-toggle>
         </mat-button-toggle-group>
+        <span class="example-spacer"></span>
+        <mat-card-actions>
+            <div fxFlex></div>
+            <button mat-stroked-button [color]="buttonColor1" (click)="signOut()">
+                <div fxFlex></div>
+                <div *ngIf="!(busy | async)">Abmelden</div>
+                <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+                <div fxFlex></div>
+            </button>
+            <div fxFlex></div>
+        </mat-card-actions>
+
+        <mat-card-actions>
+            <div fxFlex></div>
+            <button mat-stroked-button [color]="buttonColor2" (click)="openDialog()">
+                <div fxFlex></div>
+                <div *ngIf="!(busy | async)">{{wiederrufButtonText}}</div>
+                <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+                <div fxFlex></div>
+            </button>
+            <div fxFlex></div>
+        </mat-card-actions>
     </mat-toolbar>
     <expose1-content-pdf [pdfSrc]="pdfSrc"></expose1-content-pdf>
 
@@ -61,7 +84,7 @@
 
     <mat-divider [inset]="false"></mat-divider>
 
-    <mat-card-actions>
+    <!-- <mat-card-actions>
         <div fxFlex></div>
         <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
             (mouseout)="buttonColor1 = 'primary'" (click)="signOut()">
@@ -83,7 +106,7 @@
             <div fxFlex></div>
         </button>
         <div fxFlex></div>
-    </mat-card-actions>
+    </mat-card-actions> -->
 
     <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
