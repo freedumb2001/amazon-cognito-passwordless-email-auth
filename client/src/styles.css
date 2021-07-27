@@ -30,6 +30,10 @@ app-private{
     /* box-shadow:  none; */
   }
 
+  ngx-extended-pdf-viewer #viewerContainer {
+    overflow: hidden !important;
+}
+
 .main{
     width: 100%;
     /* box-shadow:  none; */

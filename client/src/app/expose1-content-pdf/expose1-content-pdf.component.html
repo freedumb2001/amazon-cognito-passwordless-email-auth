@@ -1,11 +1,14 @@
 <ngx-extended-pdf-viewer [(src)]="pdfSrc" [pageViewMode]="'infinite-scroll'" [useBrowserLocale]="true"
-    [textLayer]="false" [showHandToolButton]="false" [showToolbar]="false" [sidebarVisible]="false"
-    [zoom]="'page-width'" (pageRendered)="onPagesRendered($event)" (pdfLoaded)="pdfLoaded( $event)"
-    (pagesLoaded)="onPagesLoaded($event)" [enablePinchOnMobile]="true" useBrowserLocale="true" width="100%">
+    [textLayer]="false" [showHandToolButton]="false" [showToolbar]="false" [sidebarVisible]="false" [zoom]="'auto'"
+    (pageRendered)="onPagesRendered($event)" (pdfLoaded)="pdfLoaded( $event)" (pagesLoaded)="onPagesLoaded($event)"
+    [enablePinchOnMobile]="true" useBrowserLocale="true" width="100%">
 </ngx-extended-pdf-viewer>
 
-<!-- 1) Show zoom
+<!-- 
+1) Show zoom buttons
 2) Allow download 
 3) Push title to top on load 
 4) Better button placement on Mobil
-4) error messages in red  -->
+4) error messages in red  
+5) Update Energieausweis
+-->
