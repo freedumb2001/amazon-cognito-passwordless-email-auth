@@ -54,7 +54,7 @@
             <div fxFlex></div>
         </mat-card-actions>
     </mat-toolbar>
-    <expose1-content-pdf [pdfSrc]="pdfSrc"></expose1-content-pdf>
+    <expose1-content-pdf (pdfRendered)="pdfRendered($event)" [pdfSrc]="pdfSrc"></expose1-content-pdf>
 
     <!-- <mat-card-content>
         <expose1-content-pdf></expose1-content-pdf>

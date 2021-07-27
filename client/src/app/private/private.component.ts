@@ -26,8 +26,8 @@ export class PrivateComponent implements OnInit {
 
   wiederrufButtonText = GlobalConstants.wiederrufButtonText;
 
-  pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
-  // pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
+  // pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
+  pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};
@@ -38,6 +38,8 @@ export class PrivateComponent implements OnInit {
 
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
+
+  pdfRenderedBool: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
 
@@ -69,6 +71,11 @@ export class PrivateComponent implements OnInit {
     } finally {
       this.busy_.next(false);
     }
+  }
+
+  pdfRendered(event) {
+    this.pdfRenderedBool = event;
+    console.log("PARENT PDF RENDERED", event);
   }
 
   openDialog() {
