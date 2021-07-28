@@ -50,6 +50,6 @@
     <div fxFlex></div>
   </mat-card-actions>
 
-  <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+  <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
 </mat-card>

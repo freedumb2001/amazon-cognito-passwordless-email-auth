@@ -44,8 +44,8 @@
 
   <mat-card-content>
     <!-- <form fxLayout="row" fxLayoutAlign="center stretch"> -->
-    <!-- <form fxLayout="column" [style.margin]="'0 16px 0 16px'"> -->
-    <form fxLayout="column">
+    <form fxLayout="column" [style.margin]="'0 16px 0 16px'">
+      <!-- <form fxLayout="column"> -->
       <mat-form-field>
         <input matInput placeholder="E-mail" [formControl]="email" type="email" email name="email"
           autocomplete="username email" />
@@ -65,7 +65,7 @@
     <div fxFlex></div>
   </mat-card-actions>
 
-  <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+  <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
   <!-- <mat-card-content>
     <div fxFlex></div>

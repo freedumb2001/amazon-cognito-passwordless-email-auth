@@ -79,7 +79,8 @@ export class SignUpComponent {
       this.router.navigate(['/enter-secret-code']);
     } catch (err) {
       console.log(err);
-      this.errorMessage_.next(err.message || err);
+      let message = GlobalConstants.errorMessageTranslations[err.code] || err.message;
+      this.errorMessage_.next(message || err);
     } finally {
       this.busy_.next(false);
     }

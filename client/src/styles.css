@@ -63,6 +63,12 @@ ngx-extended-pdf-viewer #viewerContainer {
     padding: 32px 32px 32px 32px !important;
     /* opacity: 0.5; */
     background-color: transparent;
+
+}
+
+.custom-private.mat-card-content{
+    max-width: 800px;
+    font-size: 16px;
 }
 
 ngx-extended-pdf-viewer .pdfViewer .page {
@@ -109,7 +115,9 @@ ngx-extended-pdf-viewer .pdfViewer .page {
 
 }
 
-
+.error-message {
+    color: red;
+}
 
 /* Source: https://codepen.io/goodkatz/pen/LYPGxQz */
 .waves {

@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { GlobalConstants } from '../common/global-constants';
 
 @Component({
   selector: 'app-answer-challenge',
@@ -47,7 +48,13 @@ export class AnswerChallengeComponent implements OnInit, OnDestroy, AfterContent
     // Get e-mail address the code was sent to
     // It is a public challenge parameter so let's try it that way
     this.auth.getPublicChallengeParameters()
-      .then(param => this.email_.next(param.email));
+      .then(param => {
+        if (param instanceof Error && param.message.includes("Cannot read property 'challengeParam' of undefined")) { this.router.navigate(['/sign-in']); }
+        else {
+          this.email_.next(param.email);
+        }
+      });
+
 
     // Move focus to next field upon entry of a digit
     [2, 3, 4, 5, 6].forEach(digit => {
@@ -101,10 +108,15 @@ export class AnswerChallengeComponent implements OnInit, OnDestroy, AfterContent
       if (loginSucceeded) {
         this.router.navigate(['/private']);
       } else {
-        this.errorMessage_.next('That\'s not the right code');
+        this.errorMessage_.next('Der Code ist nicht korrekt.');
       }
     } catch (err) {
-      this.errorMessage_.next(err.message || err);
+      console.log(err);
+      let message: string;
+      if (err.message.includes("Challenge response cannot be empty")) {
+        message = GlobalConstants.errorMessageTranslations.ChallengeResponseCannotBeEmpty || err.message;
+      }
+      this.errorMessage_.next(message || err);
     } finally {
       this.busy_.next(false);
     }

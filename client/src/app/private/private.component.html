@@ -31,18 +31,28 @@
         <div fxFlex></div>
     </button>
 </mat-menu>
-<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
+<mat-card class="mat-elevation-z0" ngClass="app-card">
 
-    <mat-card-content>
+    <mat-card-content class="custom-private">
         <!-- <br> -->
-        Zum Verkauf stehen zwei aneinander angrenzende Objekte in Strandnähe (250m).
-        Das erste Objekt ist ein mit einem Wohnhaus bebautes 500qm großes Grundstück.
-        Direkt angrenzend befindest sich die zweite Immobilie, ein ebenfalls 500qm großes Baugrundstück. Dieses ist
-        noch
-        unbebaut.
+        <p>
+            Zum Verkauf stehen zwei aneinander angrenzende Objekte in Strandnähe (250m).
+        </p>
+        <p>
+            Das erste Objekt ist ein mit einem Wohnhaus bebautes 500qm großes Grundstück.
+        </p>
+        <p>
+            Direkt angrenzend befindest sich die zweite Immobilie, ein ebenfalls 500qm großes Baugrundstück. Dieses ist
+            noch
+            unbebaut.
+        </p>
         <br>
-        <br>
-        Bitte haben Sie etwas Geduld, das Laden des Exposés kann einige Sekunden in Anspruch nehmen.
+        <p>
+            Bitte haben Sie etwas Geduld, das Laden der Exposés kann einige Sekunden in Anspruch nehmen.
+        </p>
+        <p>
+            Sie können unten mit den Schlatflächen "Grundstück + Haus" und "Grundstück" zwischen den Exposés wechseln.
+        </p>
 
         <!-- <br> -->
     </mat-card-content>
@@ -201,6 +211,6 @@
         <div fxFlex></div>
     </mat-card-actions> -->
 
-    <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+    <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
 </mat-card>

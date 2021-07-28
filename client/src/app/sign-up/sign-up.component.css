@@ -23,5 +23,5 @@
 */
 mat-panel-description {
    flex: 0 0 auto;
-   color: red;
+   /* color: red; */
 }

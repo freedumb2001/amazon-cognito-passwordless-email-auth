@@ -33,7 +33,10 @@ export class AuthService {
   }
 
   public async getPublicChallengeParameters() {
-    return this.cognitoUser.challengeParam;
+
+    try { return this.cognitoUser.challengeParam }
+    catch (e) { return e }
+    // return this.cognitoUser.challengeParam
   }
 
   public async signUp(email: string, fullName: string) {

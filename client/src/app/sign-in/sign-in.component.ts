@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { BehaviorSubject } from 'rxjs';
+import { GlobalConstants } from '../common/global-constants';
 
 @Component({
   selector: 'app-sign-in',
@@ -47,7 +48,9 @@ export class SignInComponent {
       await this.auth.signIn(this.email.value);
       this.router.navigate(['/enter-secret-code']);
     } catch (err) {
-      this.errorMessage_.next(err.message || err);
+      console.log(err);
+      let message = GlobalConstants.errorMessageTranslations[err.code] || err.message;
+      this.errorMessage_.next(message || err);
     } finally {
       this.busy2_.next(false);
     }
