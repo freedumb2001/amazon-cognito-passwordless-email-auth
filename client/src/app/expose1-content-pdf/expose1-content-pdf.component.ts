@@ -10,11 +10,9 @@ export class Expose1ContentPdf {
     @Input() pdfSrc: string;
     @Output() pdfRendered = new EventEmitter<boolean>();
     private pagesCount: number = 0;
+    public pageViewMode = 'multiple';
 
     constructor() { }
-    // pfdSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
-    // constructor() { pdfDefaultOptions.assetsFolder = '/'; }
-
 
 
     public onPagesLoaded(event) {
@@ -23,7 +21,12 @@ export class Expose1ContentPdf {
 
     public onPagesRendered(event) {
         console.log("PAGES RENDERED", event)
-        if (this.pagesCount == event.pageNumber) {
+        if (event.pageNumber == 1) {
+
+            this.pageViewMode = 'infinite-scroll';
+            console.log("INFINITE", this.pageViewMode);
+        }
+        else if (this.pagesCount == event.pageNumber) {
             console.log("LAST PAGE RENDERED");
             this.pdfRendered.emit(true);
         }
