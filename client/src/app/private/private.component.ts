@@ -35,6 +35,8 @@ export class PrivateComponent implements OnInit {
 
   private busy_ = new BehaviorSubject(false);
   public busy = this.busy_.asObservable();
+  private pdfBusy_ = new BehaviorSubject(false);
+  public pdfBusy = this.pdfBusy_.asObservable();
 
   private errorMessage_ = new BehaviorSubject('');
   public errorMessage = this.errorMessage_.asObservable();
@@ -44,38 +46,40 @@ export class PrivateComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getUserDetails();
+    // this.getUserDetails();
   }
 
   public pdf1() {
+    this.pdfBusy_.next(false);
     this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
   }
 
   public pdf2() {
+    this.pdfBusy_.next(false);
     this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
   }
 
-  public async getUserDetails() {
-    this.busy_.next(true);
-    this.errorMessage_.next('');
-    try {
-      const userDetails = await this.auth.getUserDetails();
-      userDetails.forEach(detail => {
-        // const control = new FormControl(detail.getValue());
-        // this.userDetailsForm.addControl(detail.getName(), control);
-        this.userDetailsObj[detail.getName()] = detail.getValue();
-      });
-      this.userDetails_.next(userDetails);
-    } catch (err) {
-      this.errorMessage_.next(err.message || err);
-    } finally {
-      this.busy_.next(false);
-    }
-  }
+  // public async getUserDetails() {
+  //   this.busy_.next(true);
+  //   this.errorMessage_.next('');
+  //   try {
+  //     const userDetails = await this.auth.getUserDetails();
+  //     userDetails.forEach(detail => {
+  //       // const control = new FormControl(detail.getValue());
+  //       // this.userDetailsForm.addControl(detail.getName(), control);
+  //       this.userDetailsObj[detail.getName()] = detail.getValue();
+  //     });
+  //     this.userDetails_.next(userDetails);
+  //   } catch (err) {
+  //     this.errorMessage_.next(err.message || err);
+  //   } finally {
+  //     this.busy_.next(false);
+  //   }
+  // }
 
-  pdfRendered(event) {
+  public async pdfRendered(event) {
     this.pdfRenderedBool = event;
-    console.log("PARENT PDF RENDERED", event);
+    this.pdfBusy_.next(true);
   }
 
   openDialog() {
