@@ -16,9 +16,17 @@ input[type="text"] {
     font-size: inherit;
   }
 
+  app-root {
+    flex-direction: column;
+  }
+
 .mat-stroked-button {
     width: 80%;
 }
+/* .mat-button-toggle-button {
+font-size: 14px !important;
+    font-weight: 500 !important;
+} */
 
 /* .app-card {
     max-width: 400px;
@@ -30,7 +38,7 @@ app-private{
     /* box-shadow:  none; */
   }
 
-  ngx-extended-pdf-viewer #viewerContainer {
+ngx-extended-pdf-viewer #viewerContainer {
     overflow: hidden !important;
 }
 
@@ -39,25 +47,37 @@ app-private{
     /* box-shadow:  none; */
   }
 
-.mat-card-content, .mat-card-subtitle {
+/* .mat-card-content, .mat-card-subtitle {
     font-size: 16px;
-}
+} */
 
-.mat-card-header-text{
+/* .mat-card-header-text{
     margin: 0 0 0 0 !important;
-}
+} */
 
+.mat-toolbar {
+    font: 400 15px/32px Roboto,Helvetica Neue,sans-serif;
+}
 .custom.mat-card{
     /* background-color: #e3f8ff; */
-    padding: 32px 16px 32px 16px !important;
+    padding: 32px 32px 32px 32px !important;
     /* opacity: 0.5; */
     background-color: transparent;
 }
 
-/* .grid-layout-custom{
-    width: 80vw;
-    height: 80vh;
-  } */
+ngx-extended-pdf-viewer .pdfViewer .page {
+/* background-color: transparent; */
+/* border: none !important; */
+}
+
+.pdfViewer {
+    background-color: transparent !important;
+}
+
+.loadingInProgress {
+    background-color: transparent !important;
+}
+
 .cont {
     background-color: transparent;
 }
@@ -66,6 +86,12 @@ app-private{
     position: relative;
     margin: 10px 15px 15px 0px;
     height: 60px;
+}
+
+.title-card {
+    background-color: transparent;
+    width: 80%;
+
 }
 
 .title {
@@ -83,13 +109,7 @@ app-private{
 
 }
 
-/* .wc {
 
-    z-index: -200;
-    position: absolute;
-    position: sticky;
-    bottom: 1px;
-} */
 
 /* Source: https://codepen.io/goodkatz/pen/LYPGxQz */
 .waves {

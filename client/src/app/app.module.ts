@@ -32,7 +32,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-
+import { MatMenuModule } from '@angular/material/menu';
 
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component'
@@ -53,7 +53,8 @@ const MAT_MODULES = [
   // MatGridListModule,
   MatTabsModule,
   MatToolbarModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatMenuModule
 ];
 @NgModule({
   declarations: [
