@@ -31,30 +31,49 @@
         <div fxFlex></div>
     </button>
 </mat-menu>
+
+<mat-card ngClass="app-card">
+
+
+    <mat-card-content>
+        <mat-card-title>
+            Wohnen in Strandnähe
+        </mat-card-title>
+        <p>
+            Zum Verkauf stehen zwei aneinander angrenzende Objekte in Boltenhagen.
+        </p>
+    </mat-card-content>
+    <img class="private-image" mat-card-image src="assets/dop1-lg.png" />
+    <mat-card-subtitle class="private-image-tag">© GeoBasis-DE/M-V</mat-card-subtitle>
+    <p>
+        Das erste Objekt (A) ist ein mit einem Wohnhaus bebautes, ca. 500qm großes Grundstück.
+    </p>
+    <p>
+        Direkt angrenzend befindest sich die zweite Immobilie (B), ein ebenfalls ca. 500qm großes Baugrundstück. Dieses
+        ist
+        noch
+        unbebaut.
+    </p>
+    <img class="private-image" mat-card-image src="assets/dop1.png" />
+    <mat-card-subtitle class="private-image-tag">© GeoBasis-DE/M-V</mat-card-subtitle>
+
+</mat-card>
+
 <mat-card class="mat-elevation-z0" ngClass="app-card">
+    <mat-card-title>
+        Exposés
+    </mat-card-title>
 
     <mat-card-content class="custom-private">
-        <!-- <br> -->
-        <p>
-            Zum Verkauf stehen zwei aneinander angrenzende Objekte in Strandnähe (250m).
-        </p>
-        <p>
-            Das erste Objekt ist ein mit einem Wohnhaus bebautes 500qm großes Grundstück.
-        </p>
-        <p>
-            Direkt angrenzend befindest sich die zweite Immobilie, ein ebenfalls 500qm großes Baugrundstück. Dieses ist
-            noch
-            unbebaut.
-        </p>
-        <br>
         <p>
             Bitte haben Sie etwas Geduld, das Laden der Exposés kann einige Sekunden in Anspruch nehmen.
         </p>
         <p>
-            Sie können unten mit den Schaltflächen "Grundstück + Haus" und "Grundstück" zwischen den Exposés wechseln.
+            Sie können mit den Schaltflächen "A: Grundstück + Haus" und "B: Baugrundstück" zwischen den Exposés
+            wechseln. Mit dem Menü-Knopf am rechten Rand können sich abmelden oder einen Wiederruf des Vertrags
+            auslösen.
         </p>
 
-        <!-- <br> -->
     </mat-card-content>
     <!-- <mat-card-actions>
         <div fxFlex></div>
@@ -82,8 +101,8 @@
 <mat-toolbar>
 
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="immo1">
-        <mat-button-toggle (click)="pdf1()" value="immo1">Grundstück + Haus</mat-button-toggle>
-        <mat-button-toggle (click)="pdf2()" value="immo2">Grundstück</mat-button-toggle>
+        <mat-button-toggle (click)="pdf1()" value="immo1">A: Grundstück + Haus</mat-button-toggle>
+        <mat-button-toggle (click)="pdf2()" value="immo2">B: Baugrundstück</mat-button-toggle>
     </mat-button-toggle-group>
     <span class="example-spacer"></span>
     <!-- <span *ngIf="!(pdfBusy | async)" [style.margin-right]="'6px'">Exposé lädt...</span> -->

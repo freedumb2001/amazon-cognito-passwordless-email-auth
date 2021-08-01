@@ -67,6 +67,18 @@ ngx-extended-pdf-viewer #viewerContainer {
     font-size: 16px;
 }
 
+.private-image {
+    margin: 0 -16px 1px -16px !important;
+}
+
+.private-image-tag {
+    display: block;
+    margin-bottom: 16px;
+    color: rgba(0,0,0,.54);
+    font-size: 6px;
+    float: right;
+}
+
 ngx-extended-pdf-viewer .pdfViewer .page {
 /* background-color: transparent; */
 /* border: none !important; */

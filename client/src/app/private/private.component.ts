@@ -26,8 +26,9 @@ export class PrivateComponent implements OnInit {
 
   wiederrufButtonText = GlobalConstants.wiederrufButtonText;
 
-  // pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
-  pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
+  pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1-1.pdf";
+  pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2-1.pdf";
+  pdfSrc = this.pdfSrc1;
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};
@@ -51,12 +52,12 @@ export class PrivateComponent implements OnInit {
 
   public pdf1() {
     this.pdfBusy_.next(false);
-    this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-1.pdf";
+    this.pdfSrc = this.pdfSrc1;
   }
 
   public pdf2() {
     this.pdfBusy_.next(false);
-    this.pdfSrc = "https://planungsbuero-schulz.de/wp-content/uploads/2021/07/Expose-2.pdf";
+    this.pdfSrc = this.pdfSrc2;
   }
 
   // public async getUserDetails() {
