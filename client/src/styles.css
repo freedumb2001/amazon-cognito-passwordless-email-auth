@@ -62,10 +62,10 @@ ngx-extended-pdf-viewer #viewerContainer {
 
 }
 
-.custom-private.mat-card-content{
-    max-width: 800px;
-    font-size: 16px;
-}
+ .custom-private.mat-card-content{
+    max-width: 800px; 
+    /* font-size: 16px; */
+} 
 
 .private-image {
     margin: 0 -16px 1px -16px !important;

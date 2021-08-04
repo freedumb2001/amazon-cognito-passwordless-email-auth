@@ -101,8 +101,10 @@
 <mat-toolbar>
 
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="immo1">
-        <mat-button-toggle (click)="pdf1()" value="immo1">A: Grundstück + Haus</mat-button-toggle>
-        <mat-button-toggle (click)="pdf2()" value="immo2">B: Baugrundstück</mat-button-toggle>
+        <mat-button-toggle (click)="pdf1()" value="immo1"><strong style="font-size:18px;margin-bottom: 50px;">A:
+            </strong>Grundstück + Haus
+        </mat-button-toggle>
+        <mat-button-toggle (click)="pdf2()" value="immo2"><b>B: </b>Baugrundstück</mat-button-toggle>
     </mat-button-toggle-group>
     <span class="example-spacer"></span>
     <!-- <span *ngIf="!(pdfBusy | async)" [style.margin-right]="'6px'">Exposé lädt...</span> -->
