@@ -6,6 +6,9 @@
    flex: 1 1 auto;
  }
 
+ .mat-icon {
+   transform: scale(1.8);
+ }
 
 /* .pdf-button{
    margin-right: 10px;

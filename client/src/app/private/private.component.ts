@@ -24,7 +24,7 @@ export class PrivateComponent implements OnInit {
   buttonColor1 = "basic";
   buttonColor2 = "basic";
 
-  wiederrufButtonText = GlobalConstants.wiederrufButtonText;
+  widerrufButtonText = GlobalConstants.widerrufButtonText;
 
   pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1-1.pdf";
   pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2-1.pdf";

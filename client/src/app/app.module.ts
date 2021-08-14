@@ -34,10 +34,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 
+import { WiderrufPanel } from './widerruf-panel/widerruf-panel';
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
-import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component'
+import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component';
 // import { Expose2ContentPdf } from './expose2-content-pdf/expose2-content-pdf.component'
-import { TitleCard } from './title-card/title-card'
+import { TitleCard } from './title-card/title-card';
 
 const MAT_MODULES = [
   MatCardModule,
@@ -66,6 +67,7 @@ const MAT_MODULES = [
     SignOutComponent,
     NotFoundComponent,
     DeleteUserDialog,
+    WiderrufPanel,
     Expose1ContentPdf,
     // Expose2ContentPdf,
     TitleCard,

@@ -39,7 +39,7 @@ export class SignUpComponent {
     Validators.pattern("[^ @]*@[^ @]*"),
     // emailDomainValidator
   ]);
-  wiederrufButtonText = GlobalConstants.wiederrufButtonText;
+  widerrufButtonText = GlobalConstants.widerrufButtonText;
   widerrufsbelehrung = new FormControl('', [Validators.required]);
   provisionspflichtig = new FormControl('', [Validators.required]);
   zugriff = new FormControl('', [Validators.required]);

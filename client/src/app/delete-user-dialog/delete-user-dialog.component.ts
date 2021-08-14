@@ -8,7 +8,7 @@ import { GlobalConstants } from '../common/global-constants';
     templateUrl: 'delete-user-dialog.component.html',
 })
 export class DeleteUserDialog {
-    wiederrufButtonText = GlobalConstants.wiederrufButtonText;
+    widerrufButtonText = GlobalConstants.widerrufButtonText;
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: any
     ) { }
@@ -17,7 +17,4 @@ export class DeleteUserDialog {
         // will log the entire data object
         console.log(this.data)
     }
-    panelOpenState1 = false;
-    panelOpenState2 = false;
-    panelOpenState3 = false;
 }

@@ -1,0 +1,107 @@
+<mat-expansion-panel [expanded]="true" (opened)="panelOpenState1 = true" (closed)="panelOpenState1 = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Widerrufsrecht
+        </mat-panel-title>
+        <mat-panel-description>
+            {{panelOpenState1 ? panelOpenStateToggleText[0] : panelOpenStateToggleText[1]}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>
+        Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
+        Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.
+    </p>
+    <p>
+        Um Ihr Widerrufsrecht auszuüben, müssen Sie uns<br>
+        Planungsbüro G. Schulz<br>
+        An der Pferdekoppel 3<br>
+        23972 Dorf Mecklenburg<br>
+        Tel./Fax/Mobil.: 03841/6206611<br>
+        E-Mail: ostsee@planungsbuero-schulz.de<br>
+        mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter
+        Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu
+        widerrufen, informieren. Sie können dafür das beigefügte
+        Muster-Widerrufsformular verwenden, das jedoch nicht
+        vorgeschrieben ist.
+    </p>
+    <p>
+        Alternativ können Sie auch nach der Anmeldung den entsprechenden Knopf "{{widerrufButtonText}}" klicken
+        und
+        somit formlos
+        von Ihrem Widerrufsrecht gebrauch machen.<br>
+    </p>
+</mat-expansion-panel>
+<mat-expansion-panel [expanded]="false" (opened)="panelOpenState2 = true" (closed)="panelOpenState2 = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Folgen des Widerrufs
+        </mat-panel-title>
+        <mat-panel-description>
+            {{panelOpenState2 ? panelOpenStateToggleText[0] : panelOpenStateToggleText[1]}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
+        einschließlich der
+        Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich
+        daraus ergeben, dass sie eine andere Art der Lieferung als die von
+        uns angebotene günstigste Standardlieferung gewählt haben),
+        unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag
+        zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses
+        Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden
+        wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Trans-
+        aktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich
+        etwas anderes vereinbart; in keinem Fall werden Ihnen wegen
+        dieser Rückzahlung Entgelte berechnet.
+    </p>
+    <p>
+        Haben Sie verlangt, dass die Dienstleistung während der Widerrufs-
+        frist beginnen soll, so haben Sie uns einen angemessenen Betrag
+        zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns
+        von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags
+        unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum
+        Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen
+        entspricht.</p>
+</mat-expansion-panel>
+<mat-expansion-panel [expanded]="false" (opened)="panelOpenState3 = true" (closed)="panelOpenState3 = false">
+    <mat-expansion-panel-header class="right-aligned-header">
+        <mat-panel-title>
+            Muster-Widerrufsformular
+        </mat-panel-title>
+        <mat-panel-description>
+            {{panelOpenState3 ? panelOpenStateToggleText[0] : panelOpenStateToggleText[1]}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie
+        bitte dieses Formular aus und senden Sie es zurück.
+    </p>
+    <p>
+        An:<br>
+        Planungsbüro G. Schulz<br>
+        An der Pferdekoppel 3<br>
+        23972 Dorf Mecklenburg<br>
+    </p>
+    <p>
+        Tel./Fax/Mobil.: 03841/6206611<br>
+        E-Mail: ostsee@planungsbuero-schulz.de<br>
+    </p>
+    <p>
+        Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*)<br>
+        abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/<br>
+        die Erbringung der folgenden Dienstleistung (*)<br>
+        Bestellt am (*)/erhalten am (*)<br>
+        Name des/der Verbraucher(s)<br>
+        Anschrift des/der Verbraucher(s)<br>
+        Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)<br>
+        Datum
+    </p>
+    <p>
+        (*) Unzutreffendes bitte streichen
+    </p>
+    <p>
+        Alternativ können Sie auch nach der Anmeldung den entsprechenden Knopf "{{widerrufButtonText}}" klicken
+        und
+        somit formlos
+        von Ihrem Widerrufsrecht gebrauch machen.<br>
+    </p>
+</mat-expansion-panel>
