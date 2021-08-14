@@ -14,7 +14,5 @@ export class DeleteUserDialog {
     ) { }
 
     ngOnInit() {
-        // will log the entire data object
-        console.log(this.data)
     }
 }

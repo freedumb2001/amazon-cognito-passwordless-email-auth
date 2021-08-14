@@ -47,7 +47,7 @@ export class PrivateComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    // this.getUserDetails();
+    this.getUserDetails();
   }
 
   public pdf1() {
@@ -60,23 +60,23 @@ export class PrivateComponent implements OnInit {
     this.pdfSrc = this.pdfSrc2;
   }
 
-  // public async getUserDetails() {
-  //   this.busy_.next(true);
-  //   this.errorMessage_.next('');
-  //   try {
-  //     const userDetails = await this.auth.getUserDetails();
-  //     userDetails.forEach(detail => {
-  //       // const control = new FormControl(detail.getValue());
-  //       // this.userDetailsForm.addControl(detail.getName(), control);
-  //       this.userDetailsObj[detail.getName()] = detail.getValue();
-  //     });
-  //     this.userDetails_.next(userDetails);
-  //   } catch (err) {
-  //     this.errorMessage_.next(err.message || err);
-  //   } finally {
-  //     this.busy_.next(false);
-  //   }
-  // }
+  public async getUserDetails() {
+    this.busy_.next(true);
+    this.errorMessage_.next('');
+    try {
+      const userDetails = await this.auth.getUserDetails();
+      userDetails.forEach(detail => {
+        // const control = new FormControl(detail.getValue());
+        // this.userDetailsForm.addControl(detail.getName(), control);
+        this.userDetailsObj[detail.getName()] = detail.getValue();
+      });
+      this.userDetails_.next(userDetails);
+    } catch (err) {
+      this.errorMessage_.next(err.message || err);
+    } finally {
+      this.busy_.next(false);
+    }
+  }
 
   public async pdfRendered(event) {
     this.pdfRenderedBool = event;
