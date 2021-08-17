@@ -11,5 +11,5 @@ export class WiderrufPanel {
     panelOpenState1 = false;
     panelOpenState2 = false;
     panelOpenState3 = false;
-    panelOpenStateToggleText = ["", ""]
+    panelOpenStateToggleText = ["", "Bite aufklappen und lesen"]
 }
