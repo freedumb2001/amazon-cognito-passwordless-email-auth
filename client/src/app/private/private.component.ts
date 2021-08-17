@@ -26,8 +26,8 @@ export class PrivateComponent implements OnInit {
 
   widerrufButtonText = GlobalConstants.widerrufButtonText;
 
-  pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1-1.pdf";
-  pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2-1.pdf";
+  pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf";
+  pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2.pdf";
   pdfSrc = this.pdfSrc1;
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
