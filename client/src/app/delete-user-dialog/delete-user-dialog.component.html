@@ -1,15 +1,15 @@
 <h2 mat-dialog-title>Vertrag Widerrufen</h2>
 <mat-dialog-content class="mat-typography">
     <h4>Widerrufsbelehrung</h4>
-    <widerruf-panel></widerruf-panel>
+    <widerruf-panel [widerrufAlternativeText]='""'></widerruf-panel>
     <br><br>
     <p>
-        Durch klicken des Knopfs "Vertrag Widerrufen / Nutzerdaten löschen" mache
+        Durch klicken des Knopfs "{{widerrufButtonText}}" mache
         ich, {{data.userDetails.name}}, formlos von meinem Widerrufsrecht gebrauch und akzeptiere, dass alle meine
         Nutzerdaten gelöscht werden.<br>
     </p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Abbrechen</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Vertrag Widerrufen / Nutzerdaten löschen</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{widerrufButtonText}}</button>
 </mat-dialog-actions>

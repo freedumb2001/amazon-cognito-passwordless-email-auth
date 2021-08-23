@@ -1,5 +1,5 @@
 export class GlobalConstants {
-    public static widerrufButtonText = "Wiederruf"
+    public static widerrufButtonText = "Vertrag Widerrufen"
     public static errorMessageTranslations = {
         UsernameExistsException: "Der Nutzer existiert schon. Bitte melden Sie sich an.",
         UserNotFoundException: "Der Nutzer existiert nicht. Bitte registrieren sie sich.",

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+
 import { GlobalConstants } from '../common/global-constants';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -7,9 +8,13 @@ import { GlobalConstants } from '../common/global-constants';
     templateUrl: 'widerruf-panel.html',
 })
 export class WiderrufPanel {
+    @Input()
+    widerrufAlternativeText: string = "";
+
     widerrufButtonText = GlobalConstants.widerrufButtonText;
     panelOpenState1 = false;
     panelOpenState2 = false;
     panelOpenState3 = false;
-    panelOpenStateToggleText = ["", "Bite aufklappen und lesen"]
+    // panelOpenStateToggleText = ["", "Bitte aufklappen"]
+    panelOpenStateToggleText = ["", ""]
 }
