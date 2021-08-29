@@ -43,6 +43,7 @@ export class SignUpComponent {
   widerrufsbelehrung = new FormControl('', [Validators.required]);
   provisionspflichtig = new FormControl('', [Validators.required]);
   zugriff = new FormControl('', [Validators.required]);
+  dsgvo = new FormControl('', [Validators.required]);
 
   panelOpenState1 = false;
   panelOpenState2 = false;
@@ -60,7 +61,7 @@ export class SignUpComponent {
 
     // TODO create formgroup
     // let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.givenName, this.familyName]
-    let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.fullName]
+    let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.dsgvo, this.email, this.fullName]
 
     for (let c of fc) {
       if (c.invalid) { c.markAsDirty() }

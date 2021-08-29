@@ -66,18 +66,18 @@
   </mat-card-actions>
 
   <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
-
-  <!-- <mat-card-content>
+</mat-card>
+<!-- <mat-card-content>
     <div fxFlex></div>
     <p>Sie haben sich noch nicht registriert? <a routerLink='/sign-up' routerLinkActive="active">Hier registrieren</a>
     </p>
   </mat-card-content> -->
+<mat-card class="mat-elevation-z0 custom" ngClass="app-card">
   <mat-card-content>
-    <div fxFlex></div>
+    <div fxLayout="column" fxLayoutAlign="center center"> <span><a
+          href='https://planungsbuero-schulz.de/#kontakt-impressum' target="_blank">Impressum</a> | <a
+          href='https://planungsbuero-schulz.de/?page_id=286' target="_blank">Datenschutzerklärung</a></span></div>
 
-    <p>
-      <a href='https://planungsbuero-schulz.de/#kontakt-impressum'>Impressum</a>
-    </p>
 
   </mat-card-content>
 </mat-card>

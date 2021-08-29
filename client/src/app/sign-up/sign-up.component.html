@@ -15,12 +15,12 @@
   </mat-card-header>
 
   <mat-card-content>
-    <span class="mat-h4">Provisionshinweis</span>
+    <span class="mat-h3">Provisionshinweis</span>
     <p>
       Um das vollständige Exposé einsehen zu können, ist Ihre Zustimmung notwendig.
       Die genaue Angaben zur Provision entnehmen Sie bitte der erforderlichen Einwilligung (Checkbox weiter unten).
     </p>
-    <span class="mat-h4">Widerrufsbelehrung</span>
+    <span class="mat-h3">Widerrufsbelehrung</span>
     <widerruf-panel [widerrufAlternativeText]='"nach der Anmeldung"'></widerruf-panel>
 
 
@@ -61,6 +61,12 @@
       <mat-error class="form-control-feedback" *ngIf="zugriff.errors && (zugriff.dirty || zugriff.touched)">
         <p *ngIf="zugriff.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
       </mat-error>
+      <mat-checkbox [formControl]="dsgvo" color="primary" required>* Ich stimme der der <a
+          href='https://planungsbuero-schulz.de/?page_id=286' target="_blank">Datenschutzerklärung</a> und dem
+        speichern von Cookies zu.</mat-checkbox>
+      <mat-error class="form-control-feedback" *ngIf="dsgvo.errors && (dsgvo.dirty || dsgvo.touched)">
+        <p *ngIf="dsgvo.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
+      </mat-error>
       <br>
       <mat-form-field>
         <input matInput placeholder="Name" [formControl]="fullName" name="full-name" autocomplete="full-name"
@@ -87,6 +93,9 @@
       </mat-error>
     </form>
   </mat-card-content>
+  <mat-card-content>
+    * Pflichtfeld
+  </mat-card-content>
 
   <mat-card-actions>
     <div fxFlex></div>
@@ -103,8 +112,10 @@
   <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
 
   <mat-card-content>
-    <div fxFlex></div>
-    <p>Schon registriert? <a routerLink='/sign-in' routerLinkActive="active">Anmelden</a></p>
+    <!-- <div fxFlex></div> -->
+    <div fxLayout="column" fxLayoutAlign="center center">Schon registriert? <a routerLink='/sign-in'
+        routerLinkActive="active">Anmelden</a></div>
   </mat-card-content>
+
 
 </mat-card>
