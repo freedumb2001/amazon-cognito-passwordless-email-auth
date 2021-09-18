@@ -55,10 +55,12 @@ font-size: 14px !important;
     box-shadow:  none;
 } */
 
-app-private{
-    width: 100%;
+
+/* content sticks left */
+ /* app-private{ */
+    /* width: 100%; */
     /* box-shadow:  none; */
-  }
+  /* } */
 
 ngx-extended-pdf-viewer #viewerContainer {
     overflow: hidden !important;
@@ -194,7 +196,7 @@ animation-duration: 20s;
 0% {
     transform: translate3d(-90px,0,0);
 }
-    100% { 
-        transform: translate3d(85px,0,0);
-    }
+100% { 
+    transform: translate3d(85px,0,0);
+}
 }

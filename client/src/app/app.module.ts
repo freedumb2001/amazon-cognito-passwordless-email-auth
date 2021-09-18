@@ -39,6 +39,7 @@ import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.compon
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component';
 // import { Expose2ContentPdf } from './expose2-content-pdf/expose2-content-pdf.component'
 import { TitleCard } from './title-card/title-card';
+import { ShowPdfComponent } from './show-pdf/show-pdf.component';
 
 const MAT_MODULES = [
   MatCardModule,
@@ -71,6 +72,7 @@ const MAT_MODULES = [
     Expose1ContentPdf,
     // Expose2ContentPdf,
     TitleCard,
+    ShowPdfComponent
   ],
   imports: [
     NgxExtendedPdfViewerModule,

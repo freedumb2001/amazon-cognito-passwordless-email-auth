@@ -1,0 +1,39 @@
+<!--
+   Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   SPDX-License-Identifier: MIT-0
+-->
+<title-card></title-card>
+
+
+
+
+
+
+
+
+<mat-card class="mat-elevation-z0" ngClass="app-card">
+    <mat-card-title>
+        Exposés
+    </mat-card-title>
+
+    <mat-card-content class="custom-private">
+        <p>
+            Bitte haben Sie etwas Geduld, das Laden der Exposés kann einige Sekunden in Anspruch nehmen.
+        </p>
+        <p>
+            Sie können mit den Schaltflächen "A: Grundstück + Haus" und "B: Baugrundstück" zwischen den Exposés
+            wechseln. Mit dem Menü-Knopf am rechten Rand können sich abmelden oder einen Widerruf des Vertrags
+            auslösen.
+        </p>
+
+    </mat-card-content>
+    <a *ngIf="!(pdfBusy | async)">Exposé lädt, bitte warten...</a>
+    <mat-spinner *ngIf="!(pdfBusy | async)" [color]='"Basic"' [diameter]="35"></mat-spinner>
+
+</mat-card>
+
+
+
+
+
+<expose1-content-pdf (pdfRendered)="pdfRendered($event)" [pdfSrc]="pdfSrc"></expose1-content-pdf>

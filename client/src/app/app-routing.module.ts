@@ -8,6 +8,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PrivateComponent } from './private/private.component';
+import { ShowPdfComponent } from './show-pdf/show-pdf.component';
 import { AnswerChallengeComponent } from './answer-challenge/answer-challenge.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'enter-secret-code', component: AnswerChallengeComponent, canActivate: [IsNotAuthenticated] },
   { path: 'sign-out', component: SignOutComponent, canActivate: [IsAuthenticated] },
   { path: 'private', component: PrivateComponent, canActivate: [IsAuthenticated] },
+  { path: 'show-pdf/:id', component: ShowPdfComponent, canActivate: [IsAuthenticated] },
   { path: '', redirectTo: '/private', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];

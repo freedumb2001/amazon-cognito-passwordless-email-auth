@@ -13,9 +13,9 @@
 /* .pdf-button{
    margin-right: 10px;
 } */
-.private-card {   padding: 10px;}
+
 .example-card {
-   padding: 10px;
+  margin: 10px;
    width: 400px;
    /* min-width: 400px; */
    /* min-width: 750px; */
