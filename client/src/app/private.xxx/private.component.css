@@ -1,0 +1,27 @@
+/*
+   Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   SPDX-License-Identifier: MIT-0
+*/
+.example-spacer {
+   flex: 1 1 auto;
+ }
+
+ .mat-icon {
+   transform: scale(1.8);
+ }
+
+/* .pdf-button{
+   margin-right: 10px;
+} */
+.private-card {   padding: 10px;}
+.example-card {
+   padding: 10px;
+   width: 400px;
+   /* min-width: 400px; */
+   /* min-width: 750px; */
+ }
+ 
+ .example-header-image {
+   background-image: url('/assets/cropped-logo5-H100px.png');
+   background-size: cover;
+ }
