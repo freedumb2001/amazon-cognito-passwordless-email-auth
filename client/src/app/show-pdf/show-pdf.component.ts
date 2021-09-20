@@ -27,9 +27,9 @@ export class ShowPdfComponent {
 
 
     constructor(private route: ActivatedRoute, private router: Router) {
-        router.events.subscribe((event) => {
-            console.log(event);
-        });
+        // router.events.subscribe((event) => {
+        //     console.log(event);
+        // });
     }
 
     ngOnInit() {
@@ -41,6 +41,7 @@ export class ShowPdfComponent {
         this.pdfBusy_.next(false);
         this.pdfSrc = this.pdfSrcs[id];
         this.pdfLabel = this.pdfLabels[id];
+        console.log(this.pdfSrc)
     }
 
     public async pdfRendered(event) {

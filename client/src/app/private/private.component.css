@@ -14,10 +14,15 @@ app-private{
    text-shadow: 40px;
  }
 
- .example-header-image {
-   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+ .example-header-image1 {
+   background-image: url('/assets/möwen-rot.png');
    background-size: cover;
  }
+
+ .example-header-image2 {
+  background-image: url('/assets/möwen-grün.png');
+  background-size: cover;
+}
 
  .example-spacer {
   flex: 1 1 auto;
