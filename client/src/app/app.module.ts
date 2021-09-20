@@ -39,7 +39,8 @@ import { WiderrufPanel } from './widerruf-panel/widerruf-panel';
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component';
 // import { Expose2ContentPdf } from './expose2-content-pdf/expose2-content-pdf.component'
-import { TitleCard } from './title-card/title-card';
+import { TitleCardComponent } from './title-card/title-card.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 
 const MAT_MODULES = [
@@ -72,7 +73,8 @@ const MAT_MODULES = [
     WiderrufPanel,
     Expose1ContentPdf,
     // Expose2ContentPdf,
-    TitleCard,
+    TitleCardComponent,
+    ImpressumComponent,
     ShowPdfComponent
   ],
   imports: [
