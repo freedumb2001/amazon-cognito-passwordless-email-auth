@@ -56,13 +56,14 @@ font-size: 14px !important;
 } */
 
 
-/* content sticks left */
+
  /* app-private{ */
     /* width: 100%; */
     /* box-shadow:  none; */
   /* } */
   show-pdf{
     width: 100%;
+    max-width: 800px;
     /* box-shadow:  none; */
   }
 ngx-extended-pdf-viewer #viewerContainer {
