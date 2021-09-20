@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PrivateComponent } from './private/private.component';
+import { ShowPdfComponent } from './show-pdf/show-pdf.component';
 import { AnswerChallengeComponent } from './answer-challenge/answer-challenge.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 
@@ -39,7 +40,7 @@ import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.compon
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component';
 // import { Expose2ContentPdf } from './expose2-content-pdf/expose2-content-pdf.component'
 import { TitleCard } from './title-card/title-card';
-import { ShowPdfComponent } from './show-pdf/show-pdf.component';
+
 
 const MAT_MODULES = [
   MatCardModule,

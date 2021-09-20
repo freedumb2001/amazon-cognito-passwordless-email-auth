@@ -21,8 +21,9 @@ import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateComponent implements OnInit {
-  buttonColor1 = "basic";
-  buttonColor2 = "basic";
+  buttonColor1 = "primary";
+  buttonColor2 = "primary";
+  buttonColor3 = "primary";
 
   widerrufButtonText = GlobalConstants.widerrufButtonText;
 

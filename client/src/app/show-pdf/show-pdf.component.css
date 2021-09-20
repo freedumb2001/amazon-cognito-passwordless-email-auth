@@ -3,3 +3,11 @@
     width: 100%;
     /* box-shadow:  none; */
   }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    background:none;
+  }

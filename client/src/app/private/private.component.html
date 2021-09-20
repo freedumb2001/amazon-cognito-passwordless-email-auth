@@ -1,6 +1,28 @@
 <title-card></title-card>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="signOut()">
+        <div fxFlex></div>
+        <div *ngIf="!(busy | async)">Abmelden</div>
+        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+        <div fxFlex></div>
+    </button>
+    <button mat-menu-item (click)="openDialog()">
+        <div fxFlex></div>
+        <div *ngIf="!(busy | async)">{{widerrufButtonText}}</div>
+        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+        <div fxFlex></div>
+    </button>
+</mat-menu>
+<mat-toolbar>
+    <span class="example-spacer"></span>
+    <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
+        (mouseout)="buttonColor1 = 'primary'" [matMenuTriggerFor]="menu" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>account_circle</mat-icon><span> Abmelden/Wiederruf</span>
+    </button>
+</mat-toolbar>
 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center">
-    <mat-card class="example-card" (click)="goToPdf('1')">
+    <mat-card cdkTrapFocus class="example-card" (click)="goToPdf('1')">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>Wohnen und Wohlfühlen im Ostseebad Boltenhagen</mat-card-title>
@@ -13,8 +35,8 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <button mat-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
+                (mouseout)="buttonColor2 = 'primary'">Exposé aufrufen</button>
         </mat-card-actions>
     </mat-card>
     <mat-card class="example-card" (click)="goToPdf('2')">
@@ -30,8 +52,8 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <button mat-button [color]="buttonColor3" (mouseover)="buttonColor3 = 'accent'"
+                (mouseout)="buttonColor3 = 'primary'">Exposé aufrufen</button>
         </mat-card-actions>
     </mat-card>
 </div>

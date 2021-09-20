@@ -2,14 +2,8 @@
    Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    SPDX-License-Identifier: MIT-0
 -->
+
 <title-card></title-card>
-
-
-
-
-
-
-
 
 <mat-card class="mat-elevation-z0" ngClass="app-card">
     <mat-card-title>
@@ -32,8 +26,46 @@
 
 </mat-card>
 
+<!-- <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="signOut()">
+        <div fxFlex></div>
+        <div *ngIf="!(busy | async)">Abmelden</div>
+        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+        <div fxFlex></div>
+    </button>
+    <button mat-menu-item (click)="openDialog()">
+        <div fxFlex></div>
+        <div *ngIf="!(busy | async)">{{widerrufButtonText}}</div>
+        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+        <div fxFlex></div>
+    </button>
+</mat-menu> -->
 
 
+<mat-toolbar>
 
+    <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="immo1"> -->
+    <!-- <mat-button-toggle (click)="pdf1()" value="immo1"><b>A: </b>Grundstück + Haus
+        </mat-button-toggle>
+        <mat-button-toggle (click)="pdf2()" value="immo2"><b>B: </b>Baugrundstück</mat-button-toggle> -->
+    <!-- </mat-button-toggle-group> -->
+
+    <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
+        (mouseout)="buttonColor1 = 'primary'" (click)="home()" class="example-icon" aria-label="Home">
+        <mat-icon>home</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
+        (mouseout)="buttonColor2 = 'primary'" (click)="navPrevious()" class="example-icon" aria-label="Home">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <button mat-raised-button [color]="buttonColor3" (mouseover)="buttonColor3 = 'accent'"
+        (mouseout)="buttonColor3 = 'primary'" (click)="navNext()" class="example-icon" aria-label="Home">
+        <mat-icon>arrow_forward</mat-icon>
+    </button>
+
+</mat-toolbar>
+<p>{{pdfLabel}}</p>
 
 <expose1-content-pdf (pdfRendered)="pdfRendered($event)" [pdfSrc]="pdfSrc"></expose1-content-pdf>

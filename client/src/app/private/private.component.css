@@ -2,12 +2,27 @@
    Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    SPDX-License-Identifier: MIT-0
 */
-
+/* content sticks left */
+app-private{
+  width: 100%;
+  /* box-shadow:  none; */
+}
 .example-card {
    max-width: 400px;
+   cursor: pointer;
+   margin: 10px;
+   text-shadow: 40px;
  }
 
  .example-header-image {
    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
    background-size: cover;
  }
+
+ .example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background:none;
+}
