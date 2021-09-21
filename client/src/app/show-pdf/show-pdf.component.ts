@@ -9,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./show-pdf.component.css'],
 })
 export class ShowPdfComponent {
-    // @Input() pdfSrc: string;
     buttonColor1 = "primary";
     buttonColor2 = "primary";
     buttonColor3 = "primary";
-    private pagesCount: number = 0;
     public pageViewMode = 'multiple';
     pdfSrc = '';
     pdfLabel = '';
@@ -24,7 +22,6 @@ export class ShowPdfComponent {
     private pdfBusy_ = new BehaviorSubject(false);
     public pdfBusy = this.pdfBusy_.asObservable();
     pdfSrcKeys = Object.keys(this.pdfSrcs)
-
 
     constructor(private route: ActivatedRoute, private router: Router) {
         // router.events.subscribe((event) => {

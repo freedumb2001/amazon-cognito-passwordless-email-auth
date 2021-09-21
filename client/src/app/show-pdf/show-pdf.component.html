@@ -5,61 +5,34 @@
 
 <title-card></title-card>
 <mat-toolbar>
-
     <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
         (mouseout)="buttonColor1 = 'primary'" (click)="home()" class="example-icon" aria-label="Home">
         <mat-icon>home</mat-icon>
     </button>
-
     <button mat-raised-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
         (mouseout)="buttonColor2 = 'primary'" (click)="navPrevious()" class="example-icon" aria-label="Home">
         <mat-icon>arrow_back</mat-icon>
     </button>
-
     <button mat-raised-button [color]="buttonColor3" (mouseover)="buttonColor3 = 'accent'"
         (mouseout)="buttonColor3 = 'primary'" (click)="navNext()" class="example-icon" aria-label="Home">
         <mat-icon>arrow_forward</mat-icon>
     </button>
-
 </mat-toolbar>
 
-
 <mat-card class="mat-elevation-z0 custom" ngClass="app-card">
-
     <mat-card-title>
         Exposé {{pdfLabel}}
     </mat-card-title>
-    <mat-card-content class="custom-private">
-        <p *ngIf="!(pdfBusy | async)">
+    <mat-card-content *ngIf="!(pdfBusy | async)" class="custom-private">
+        <p>
             Bitte haben Sie etwas Geduld, das Laden des Exposé kann einige Sekunden in Anspruch nehmen.
         </p>
-
     </mat-card-content>
     <mat-toolbar *ngIf="!(pdfBusy | async)">
         <a>Exposé lädt, bitte warten...</a> <span class="example-spacer"></span>
-
         <mat-spinner [color]='"Basic"' [diameter]="35"></mat-spinner>
     </mat-toolbar>
-
 </mat-card>
-
-
-<!-- <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="signOut()">
-        <div fxFlex></div>
-        <div *ngIf="!(busy | async)">Abmelden</div>
-        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
-        <div fxFlex></div>
-    </button>
-    <button mat-menu-item (click)="openDialog()">
-        <div fxFlex></div>
-        <div *ngIf="!(busy | async)">{{widerrufButtonText}}</div>
-        <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
-        <div fxFlex></div>
-    </button>
-</mat-menu> -->
-
-
 
 <expose1-content-pdf (pdfRendered)="pdfRendered($event)" [pdfSrc]="pdfSrc"></expose1-content-pdf>
 <impressum-component></impressum-component>
