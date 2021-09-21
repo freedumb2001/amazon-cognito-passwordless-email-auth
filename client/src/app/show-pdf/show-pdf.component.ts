@@ -15,7 +15,7 @@ export class ShowPdfComponent {
     public pageViewMode = 'multiple';
     pdfSrc = '';
     pdfLabel = '';
-    pdfSrcs = { '1': "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf", '2': "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2.pdf" };
+    pdfSrcs = { '1': "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf", '2': "https://planungsbuero-schulz.de/wp-content/uploads/2021/09/Expose-2.pdf" };
     pdfLabels = { '1': "Haus + Grundstück", '2': "Baugrundstück" };
     pdfId = '';
     pdfRenderedBool: boolean = false;
