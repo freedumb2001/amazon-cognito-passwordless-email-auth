@@ -38,9 +38,9 @@ input[type="text"] {
     font-size: inherit;
   }
 
-  app-root {
+  /* app-root {
     flex-direction: column;
-  }
+  } */
 
 .mat-stroked-button {
     width: 80%;
@@ -50,10 +50,10 @@ font-size: 14px !important;
     font-weight: 500 !important;
 } */
 
-/* .app-card {
-    max-width: 400px;
+.app-card {
+    max-width: 600px;
     box-shadow:  none;
-} */
+}
 
 
 
@@ -63,7 +63,7 @@ font-size: 14px !important;
   /* } */
   show-pdf{
     width: 100%;
-    max-width: 800px;
+    /* max-width: 800px; */
     /* box-shadow:  none; */
   }
 ngx-extended-pdf-viewer #viewerContainer {

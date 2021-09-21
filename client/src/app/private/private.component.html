@@ -13,6 +13,76 @@
         <div fxFlex></div>
     </button>
 </mat-menu>
+<!-- <mat-toolbar>
+    <span class="example-spacer"></span>
+    <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
+        (mouseout)="buttonColor1 = 'primary'" [matMenuTriggerFor]="menu" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>account_circle</mat-icon><span> Abmelden/Widerruf</span>
+    </button>
+</mat-toolbar> -->
+<div>
+    <mat-card class="mat-elevation-z0 custom" ngClass="app-card">
+
+        <div>
+            <mat-card-title>Ostseebad Boltenhagen</mat-card-title>
+            <!-- <mat-card-subtitle>Um Zugang zum Exposé zu erhalten, müssen Sie zunächst den Nutzugsbedingungen zustimmen und
+        sich
+        registrieren.
+      </mat-card-subtitle> -->
+        </div>
+        <mat-card-content>Zum Verkauf stehen zwei wunderschöne aneinander angrenzende
+            Objekte in Boltenhagen in
+            ruhiger und dennoch zentraler Wohnlage. Die Objekte befinden sich am Rand von Boltenhagen in Strandnähe und
+            mit
+            teilweiweise unverbauten Blick.</mat-card-content>
+
+    </mat-card>
+
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center">
+        <mat-card class="expose-card" (click)="goToPdf('1')">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image1"></div>
+                <mat-card-title>Wohnen und Wohlfühlen im Ostseebad Boltenhagen</mat-card-title>
+                <mat-card-subtitle>mit ca. 500qm großem Grundstück</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/house_title_small.png" alt="Karte">
+            <mat-card-content class="expose-card-content">
+                <p>
+                    Das im Jahre 1977 errichtete Familienhaus bietet mit seinen 5 Zimmern, inklusive ausgebauten
+                    Souterrain
+                    und schönem Garten jede Menge Platz für die ganze Familie. Von der großzügigen Holzterrasse aus hat
+                    man
+                    einen unverbauten Blick nach Norden in Richtung Ostsee.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
+                    (mouseout)="buttonColor2 = 'primary'">Exposé aufrufen</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="expose-card" (click)="goToPdf('2')">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image2"></div>
+                <mat-card-title>Idyllisches Baugrundstück im Ostseebad Boltenhagen</mat-card-title>
+                <mat-card-subtitle>ca. 500qm großes Grundstück</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/land_title_small.png" alt="Karte">
+            <mat-card-content class="expose-card-content">
+                <p>
+                    Das benachtbarte Grundstück liegt in idyllischer Lage am Ortsrand vom Ostseebad Boltenhagen mit
+                    freien
+                    Blick auf Feld
+                    und Wiesen. Der Strand ist ca. 250m entfernt.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button [color]="buttonColor3" (mouseover)="buttonColor3 = 'accent'"
+                    (mouseout)="buttonColor3 = 'primary'">Exposé aufrufen</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
 <mat-toolbar>
     <span class="example-spacer"></span>
     <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
@@ -20,41 +90,6 @@
         aria-label="Example icon-button with menu icon">
         <mat-icon>account_circle</mat-icon><span> Abmelden/Widerruf</span>
     </button>
+    <span class="example-spacer"></span>
 </mat-toolbar>
-<div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center">
-    <mat-card cdkTrapFocus class="example-card" (click)="goToPdf('1')">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image1"></div>
-            <mat-card-title>Wohnen und Wohlfühlen im Ostseebad Boltenhagen</mat-card-title>
-            <mat-card-subtitle>mit ca. 500qm großem Grundstück</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="assets/house_title_small.png" alt="Karte">
-        <mat-card-content>
-            <!-- <p>
-                Das erste Objekt (A) ist ein mit einem Wohnhaus bebautes, ca. 500qm großes Grundstück
-            </p> -->
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button [color]="buttonColor2" (mouseover)="buttonColor2 = 'accent'"
-                (mouseout)="buttonColor2 = 'primary'">Exposé aufrufen</button>
-        </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card" (click)="goToPdf('2')">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image2"></div>
-            <mat-card-title>Idyllisches Baugrundstück im Ostseebad Boltenhagen</mat-card-title>
-            <mat-card-subtitle>ca. 500qm großes Grundstück</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="assets/land_title_small.png" alt="Karte">
-        <mat-card-content>
-            <!-- <p>
-                Das erste Objekt (A) ist ein mit einem Wohnhaus bebautes, ca. 500qm großes Grundstück
-            </p> -->
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button [color]="buttonColor3" (mouseover)="buttonColor3 = 'accent'"
-                (mouseout)="buttonColor3 = 'primary'">Exposé aufrufen</button>
-        </mat-card-actions>
-    </mat-card>
-</div>
 <impressum-component></impressum-component>

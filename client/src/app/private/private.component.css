@@ -3,13 +3,13 @@
    SPDX-License-Identifier: MIT-0
 */
 
-.example-card {
+.expose-card {
    max-width: 400px;
    cursor: pointer;
    margin: 10px;
    text-shadow: 40px;
  }
-
+ .expose-card-content {height: 70px;}
  .example-header-image1 {
    background-image: url('/assets/möwen-rot.png');
    background-size: cover;
