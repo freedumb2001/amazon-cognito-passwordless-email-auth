@@ -54,7 +54,7 @@ export class ShowPdfComponent {
 
     public navNext() {
         let id = this.pdfSrcKeys.indexOf(this.pdfId) + 1;
-        if (id > this.pdfSrcKeys.length) {
+        if (id >= this.pdfSrcKeys.length) {
             id = 0
         }
         this.goToPdf(this.pdfSrcKeys[id])
