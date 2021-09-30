@@ -38,30 +38,25 @@ input[type="text"] {
     font-size: inherit;
   }
 
-  /* app-root {
+/* app-root {
     flex-direction: column;
-  } */
+} */
 
 .mat-stroked-button {
     width: 80%;
 }
-/* .mat-button-toggle-button {
-font-size: 14px !important;
-    font-weight: 500 !important;
-} */
 
 .app-card {
     max-width: 600px;
     box-shadow:  none;
 }
 
-
-
  /* app-private{ */
     /* width: 100%; */
     /* box-shadow:  none; */
   /* } */
-  show-pdf{
+
+show-pdf{
     width: 100%;
     /* max-width: 800px; */
     /* box-shadow:  none; */
@@ -69,14 +64,6 @@ font-size: 14px !important;
 ngx-extended-pdf-viewer #viewerContainer {
     overflow: hidden !important;
 }
-
-/* .mat-card-content, .mat-card-subtitle {
-    font-size: 16px;
-} */
-
-/* .mat-card-header-text{
-    margin: 0 0 0 0 !important;
-} */
 
 .mat-toolbar {
     font: 400 15px/16px Roboto,Helvetica Neue,sans-serif;
@@ -87,10 +74,9 @@ ngx-extended-pdf-viewer #viewerContainer {
     padding: 32px 32px 32px 32px !important;
     /* opacity: 0.5; */
     background-color: transparent;
-
 }
 
- .custom-private.mat-card-content{
+.custom-private.mat-card-content{
     max-width: 800px; 
     /* font-size: 16px; */
 } 
@@ -111,10 +97,6 @@ ngx-extended-pdf-viewer .pdfViewer .page {
 /* background-color: transparent; */
 /* border: none !important; */
 }
-
-/* .card-pdf {
-    background-color: #f5f5f5 !important;
-} */
 
 .pdfViewer {
     background-color: transparent !important;
