@@ -27,9 +27,9 @@ export class PrivateComponent implements OnInit {
 
   widerrufButtonText = GlobalConstants.widerrufButtonText;
 
-  pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf";
-  pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2.pdf";
-  pdfSrc = this.pdfSrc1;
+  // pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf";
+  // pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2.pdf";
+  // pdfSrc = this.pdfSrc1;
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};
@@ -51,15 +51,15 @@ export class PrivateComponent implements OnInit {
     this.getUserDetails();
   }
 
-  public pdf1() {
-    this.pdfBusy_.next(false);
-    this.pdfSrc = this.pdfSrc1;
-  }
+  // public pdf1() {
+  //   this.pdfBusy_.next(false);
+  //   this.pdfSrc = this.pdfSrc1;
+  // }
 
-  public pdf2() {
-    this.pdfBusy_.next(false);
-    this.pdfSrc = this.pdfSrc2;
-  }
+  // public pdf2() {
+  //   this.pdfBusy_.next(false);
+  //   this.pdfSrc = this.pdfSrc2;
+  // }
 
   public async getUserDetails() {
     this.busy_.next(true);
