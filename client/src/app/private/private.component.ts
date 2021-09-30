@@ -11,8 +11,6 @@ import Auth from '@aws-amplify/auth';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserDialog } from '../delete-user-dialog/delete-user-dialog.component'
-// import { Expose1Content } from '../expose1-content/expose1-content.component'
-// import { Expose1ContentPdf } from '../expose1-content-pdf/expose1-content-pdf.component'
 
 @Component({
   selector: 'app-private',
@@ -27,9 +25,6 @@ export class PrivateComponent implements OnInit {
 
   widerrufButtonText = GlobalConstants.widerrufButtonText;
 
-  // pdfSrc1 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-1.pdf";
-  // pdfSrc2 = "https://planungsbuero-schulz.de/wp-content/uploads/2021/08/Expose-2.pdf";
-  // pdfSrc = this.pdfSrc1;
   private userDetails_: BehaviorSubject<any[]> = new BehaviorSubject(undefined);
   public userDetails = this.userDetails_.asObservable();
   public userDetailsObj = {};
