@@ -31,13 +31,10 @@ import { GlobalConstants } from '../common/global-constants';
 })
 export class SignUpComponent {
   buttonColor = "primary";
-  // givenName = new FormControl('', Validators.required,);
-  // familyName = new FormControl('', Validators.required,);
   fullName = new FormControl('', Validators.required,);
   email = new FormControl('', [
     Validators.required,
     Validators.pattern("[^ @]*@[^ @]*"),
-    // emailDomainValidator
   ]);
   widerrufButtonText = GlobalConstants.widerrufButtonText;
   widerrufsbelehrung = new FormControl('', [Validators.required]);
@@ -58,21 +55,19 @@ export class SignUpComponent {
   constructor(private router: Router, private auth: AuthService) { }
 
   public async signup() {
-
-    // TODO create formgroup
-    // let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.email, this.givenName, this.familyName]
     let fc = [this.widerrufsbelehrung, this.provisionspflichtig, this.zugriff, this.dsgvo, this.email, this.fullName]
 
     for (let c of fc) {
       if (c.invalid) { c.markAsDirty() }
     }
+
     for (let c of fc) {
       if (c.invalid) { return }
     }
 
-
     this.errorMessage_.next('');
     this.busy_.next(true);
+
     try {
       console.log(this.email.valid);
       await this.auth.signUp(this.email.value, this.fullName.value);

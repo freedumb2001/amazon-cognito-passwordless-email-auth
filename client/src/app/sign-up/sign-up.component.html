@@ -4,40 +4,48 @@
 -->
 
 <title-card></title-card>
-<!-- <mat-card class="mat-elevation-z0 custom" fxFlex="1 1 auto" ngClass="app-card" class="app-card"> -->
-
 <mat-card class="mat-elevation-z0 custom" ngClass="app-card">
-
   <mat-card-header>
-    <mat-icon mat-card-avatar>lock</mat-icon>
-    <mat-card-title>Bitte registrieren Sie sich</mat-card-title>
-    <mat-card-subtitle>Danach erhalten Sie Zugriff auf das Exposé</mat-card-subtitle>
+    <mat-icon mat-card-avatar>
+      lock
+    </mat-icon>
+    <mat-card-title>
+      Bitte registrieren Sie sich
+    </mat-card-title>
+    <mat-card-subtitle>
+      Danach erhalten Sie Zugriff auf das Exposé
+    </mat-card-subtitle>
   </mat-card-header>
-
   <mat-card-content>
-    <span class="mat-h3">Provisionshinweis</span>
+    <span class="mat-h3">
+      Provisionshinweis
+    </span>
     <p>
       Um das vollständige Exposé einsehen zu können, ist Ihre Zustimmung notwendig.
       Die genaue Angaben zur Provision entnehmen Sie bitte der erforderlichen Einwilligung (Checkbox weiter unten).
     </p>
     <span class="mat-h3">Widerrufsbelehrung</span>
     <widerruf-panel [widerrufAlternativeText]='"nach der Anmeldung"'></widerruf-panel>
-
-
     <form fxLayout="column">
       <br><br>
       <mat-checkbox [formControl]="widerrufsbelehrung" color="primary" required class="form-check-input"><span>*
-        </span>Ich habe die
+        </span>
+        Ich habe die
         Widerrufsbelehrung
         vollständig gelesen
-        und verstanden.</mat-checkbox>
+        und verstanden.
+      </mat-checkbox>
       <mat-error class="form-control-feedback"
         *ngIf="widerrufsbelehrung.errors && (widerrufsbelehrung.dirty || widerrufsbelehrung.touched)">
-        <p *ngIf="widerrufsbelehrung.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
+        <p *ngIf="widerrufsbelehrung.errors.required">
+          Um fortzufahren, müssen Sie hier bestätigen.
+        </p>
       </mat-error>
       <span>
         <mat-checkbox [formControl]="provisionspflichtig" color="primary" required>
-          <div><span>* </span>Die angebotene Immobilie ist provisionspflichtig. Mit dem
+          <div>
+            <span>* </span>
+            Die angebotene Immobilie ist provisionspflichtig. Mit dem
             Anklicken
             dieser Checkbox
             bestätige ich den Provisionshinweis und bezahle für den Fall, dass ich diese Immobilie
@@ -47,25 +55,38 @@
         </mat-checkbox>
         <mat-error class="form-control-feedback"
           *ngIf="provisionspflichtig.errors && (provisionspflichtig.dirty || provisionspflichtig.touched)">
-          <p *ngIf="provisionspflichtig.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
+          <p *ngIf="provisionspflichtig.errors.required">
+            Um fortzufahren, müssen Sie hier bestätigen.
+          </p>
         </mat-error>
       </span>
-      <mat-checkbox [formControl]="zugriff" color="primary" required>* Ich bin einverstanden und verlange ausdrücklich,
+      <mat-checkbox [formControl]="zugriff" color="primary" required>
+        * Ich bin einverstanden und verlange ausdrücklich,
         dass
         Sie mir
         Zugriff auf das Exposé vor Ende der Widerrufsfrist gewähren und damit
         mit der Ausführung der beauftragten Dienstleistung beginnen.
         Mir ist bekannt, dass ich bei vollständiger Vertragserfüllung
         durch Sie, die bereits in der Gewährung des Zugriffs auf das Exposés liegen
-        kann, mein Widerrufsrecht verliere.</mat-checkbox>
+        kann, mein Widerrufsrecht verliere.
+      </mat-checkbox>
       <mat-error class="form-control-feedback" *ngIf="zugriff.errors && (zugriff.dirty || zugriff.touched)">
-        <p *ngIf="zugriff.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
+        <p *ngIf="zugriff.errors.required">
+          Um fortzufahren, müssen Sie hier bestätigen.
+        </p>
       </mat-error>
-      <mat-checkbox [formControl]="dsgvo" color="primary" required>* Ich stimme der der <a
-          href='https://planungsbuero-schulz.de/?page_id=286' target="_blank">Datenschutzerklärung</a> und dem
-        speichern von Cookies zu.</mat-checkbox>
+      <mat-checkbox [formControl]="dsgvo" color="primary" required>
+        * Ich stimme der der
+        <a href='https://planungsbuero-schulz.de/?page_id=286' target="_blank">
+          Datenschutzerklärung
+        </a>
+        und dem
+        speichern von Cookies zu.
+      </mat-checkbox>
       <mat-error class="form-control-feedback" *ngIf="dsgvo.errors && (dsgvo.dirty || dsgvo.touched)">
-        <p *ngIf="dsgvo.errors.required">Um fortzufahren, müssen Sie hier bestätigen.</p>
+        <p *ngIf="dsgvo.errors.required">
+          Um fortzufahren, müssen Sie hier bestätigen.
+        </p>
       </mat-error>
       <br>
       <mat-form-field>
@@ -73,50 +94,44 @@
           required />
       </mat-form-field>
       <mat-error class="form-control-feedback" *ngIf="fullName.errors && (fullName.dirty || fullName.touched)">
-        <p *ngIf="fullName.errors.required">Der Name muss angegeben werden.</p>
+        <p *ngIf="fullName.errors.required">
+          Der Name muss angegeben werden.
+        </p>
       </mat-error>
-      <!-- <mat-form-field>
-        <input matInput placeholder="Nachname" [formControl]="familyName" name="family-name" autocomplete="family-name"
-          required />
-      </mat-form-field>
-      <mat-error class="form-control-feedback" *ngIf="familyName.errors && (familyName.dirty || familyName.touched)">
-        <p *ngIf="familyName.errors.required">Der Nachname muss angegeben werden.</p>
-      </mat-error> -->
       <mat-form-field>
         <input matInput placeholder="E-mail" [formControl]="email" type="email" email name="email"
           autocomplete="username email" ngModel [email]="true" required />
       </mat-form-field>
       <mat-error class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
-        <p *ngIf="email.errors.required">Die E-Mail muss angegeben werden.</p>
-        <p *ngIf="email.errors.pattern">The E-Mail-Adresse muss mindestens das @-Zeichen enthalten.</p>
-        <!-- <p *ngIf="email.errors.emailDomain">Email must be on the codecraft.tv domain</p> -->
+        <p *ngIf="email.errors.required">
+          Die E-Mail muss angegeben werden.
+        </p>
+        <p *ngIf="email.errors.pattern">
+          The E-Mail-Adresse muss mindestens das @-Zeichen enthalten.
+        </p>
       </mat-error>
     </form>
   </mat-card-content>
   <mat-card-content>
     * Pflichtfeld
   </mat-card-content>
-
   <mat-card-actions>
     <div fxFlex></div>
     <button mat-raised-button [color]="buttonColor" (mouseover)="buttonColor = 'accent'"
       (mouseout)="buttonColor = 'primary'" (click)="signup()">
       <div fxFlex></div>
-      <div *ngIf="!(busy | async)">Registrierung abschliessen</div>
+      <div *ngIf="!(busy | async)">
+        Registrierung abschliessen
+      </div>
       <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
       <div fxFlex></div>
     </button>
     <div fxFlex></div>
   </mat-card-actions>
-
   <p class="error-message" *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
-
   <mat-card-content>
-    <!-- <div fxFlex></div> -->
     <div fxLayout="column" fxLayoutAlign="center center">Schon registriert? <a routerLink='/sign-in'
         routerLinkActive="active">Anmelden</a></div>
   </mat-card-content>
-
-
 </mat-card>
 <impressum-component></impressum-component>

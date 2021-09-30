@@ -34,25 +34,25 @@ export class ShowPdfComponent {
         this.pdf(this.pdfId);
     }
 
-    public pdf(id) {
+    pdf(id) {
         this.pdfBusy_.next(false);
         this.pdfSrc = this.pdfSrcs[id];
         this.pdfLabel = this.pdfLabels[id];
         console.log(this.pdfSrc)
     }
 
-    public async pdfRendered(event) {
+    async pdfRendered(event) {
         this.pdfRenderedBool = event;
         this.pdfBusy_.next(true);
     }
 
-    public goToPdf(id) {
+    goToPdf(id) {
         this.router.navigate(['/show-pdf', id]).then(() => {
             window.location.reload();
         })
     }
 
-    public navNext() {
+    navNext() {
         let id = this.pdfSrcKeys.indexOf(this.pdfId) + 1;
         if (id >= this.pdfSrcKeys.length) {
             id = 0
@@ -60,7 +60,7 @@ export class ShowPdfComponent {
         this.goToPdf(this.pdfSrcKeys[id])
     }
 
-    public navPrevious() {
+    navPrevious() {
         let id = this.pdfSrcKeys.indexOf(this.pdfId) - 1;
         if (id < 0) {
             id = this.pdfSrcKeys.length - 1
@@ -68,6 +68,6 @@ export class ShowPdfComponent {
         this.goToPdf(this.pdfSrcKeys[id])
     }
 
-    public home() { this.router.navigate(['/private']) }
+    home() { this.router.navigate(['/private']) }
 }
 

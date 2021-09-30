@@ -13,38 +13,27 @@
         <div fxFlex></div>
     </button>
 </mat-menu>
-<!-- <mat-toolbar>
-    <span class="example-spacer"></span>
-    <button mat-raised-button [color]="buttonColor1" (mouseover)="buttonColor1 = 'accent'"
-        (mouseout)="buttonColor1 = 'primary'" [matMenuTriggerFor]="menu" class="example-icon"
-        aria-label="Example icon-button with menu icon">
-        <mat-icon>account_circle</mat-icon><span> Abmelden/Widerruf</span>
-    </button>
-</mat-toolbar> -->
 <div>
     <mat-card class="mat-elevation-z0 custom" ngClass="app-card">
-
         <div>
             <mat-card-title>Ostseebad Boltenhagen</mat-card-title>
-            <!-- <mat-card-subtitle>Um Zugang zum Exposé zu erhalten, müssen Sie zunächst den Nutzugsbedingungen zustimmen und
-        sich
-        registrieren.
-      </mat-card-subtitle> -->
         </div>
         <mat-card-content>Zum Verkauf stehen zwei wunderschöne, aneinander angrenzende
             Objekte in Boltenhagen in
             ruhiger und dennoch zentraler Wohnlage. Die Objekte befinden sich am Rand von Boltenhagen in Strandnähe und
             mit
             teil-weise unverbautem Blick.</mat-card-content>
-
     </mat-card>
-
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start center">
         <mat-card class="expose-card" (click)="goToPdf('1')">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image1"></div>
-                <mat-card-title>Wohnen und Wohlfühlen im Ostseebad Boltenhagen</mat-card-title>
-                <mat-card-subtitle>mit ca. 500qm großem Grundstück</mat-card-subtitle>
+                <mat-card-title>
+                    Wohnen und Wohlfühlen im Ostseebad Boltenhagen
+                </mat-card-title>
+                <mat-card-subtitle>
+                    mit ca. 500qm großem Grundstück
+                </mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="assets/house_title_small.png" alt="Karte">
             <mat-card-content class="expose-card-content">
@@ -64,8 +53,12 @@
         <mat-card class="expose-card" (click)="goToPdf('2')">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image2"></div>
-                <mat-card-title>Idyllisches Baugrundstück im Ostseebad Boltenhagen</mat-card-title>
-                <mat-card-subtitle>ca. 500qm großes Grundstück</mat-card-subtitle>
+                <mat-card-title>
+                    Idyllisches Baugrundstück im Ostseebad Boltenhagen
+                </mat-card-title>
+                <mat-card-subtitle>
+                    ca. 500qm großes Grundstück
+                </mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="assets/land_title_small.png" alt="Karte">
             <mat-card-content class="expose-card-content">
@@ -86,7 +79,6 @@
 <div style="padding-top: 14px;" fxLayout="row" fxLayoutAlign="space-around center">
     <div></div>
     <img mat-card-image src=" assets/dop3.png" alt="Karte" style="width: 97%;">
-
     <div></div>
 </div>
 <mat-toolbar>

@@ -26,19 +26,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
-// import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 import { WiderrufPanel } from './widerruf-panel/widerruf-panel';
 import { DeleteUserDialog } from './delete-user-dialog/delete-user-dialog.component';
 import { Expose1ContentPdf } from './expose1-content-pdf/expose1-content-pdf.component';
-// import { Expose2ContentPdf } from './expose2-content-pdf/expose2-content-pdf.component'
 import { TitleCardComponent } from './title-card/title-card.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 
@@ -54,7 +53,6 @@ const MAT_MODULES = [
   MatIconModule,
   MatDialogModule,
   MatDividerModule,
-  // MatGridListModule,
   MatTabsModule,
   MatToolbarModule,
   MatButtonToggleModule,
@@ -72,7 +70,6 @@ const MAT_MODULES = [
     DeleteUserDialog,
     WiderrufPanel,
     Expose1ContentPdf,
-    // Expose2ContentPdf,
     TitleCardComponent,
     ImpressumComponent,
     ShowPdfComponent

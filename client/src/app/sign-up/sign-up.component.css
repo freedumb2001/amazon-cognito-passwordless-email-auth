@@ -2,9 +2,6 @@
    Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    SPDX-License-Identifier: MIT-0
 */
-/* .app-card {
-   max-width: 800px;
- } */
  
 :host::ng-deep.mat-checkbox-layout{
    white-space: normal !important;
@@ -17,10 +14,7 @@
 .right-aligned-header > .mat-content {
       justify-content: space-between;
   }
-/*
-.mat-content > mat-panel-title, .mat-content > mat-panel-description {
-*/
+
 mat-panel-description {
    flex: 0 0 auto;
-   /* color: red; */
 }

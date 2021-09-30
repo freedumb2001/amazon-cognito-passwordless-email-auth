@@ -18,7 +18,6 @@
         <mat-icon>arrow_forward</mat-icon>
     </button>
 </mat-toolbar>
-
 <mat-card class="mat-elevation-z0 custom" ngClass="app-card">
     <mat-card-title>
         Exposé {{pdfLabel}}
@@ -29,10 +28,12 @@
         </p>
     </mat-card-content>
     <mat-toolbar *ngIf="!(pdfBusy | async)">
-        <a>Exposé lädt, bitte warten...</a> <span class="example-spacer"></span>
+        <a>
+            Exposé lädt, bitte warten...
+        </a>
+        <span class="example-spacer"></span>
         <mat-spinner [color]='"Basic"' [diameter]="35"></mat-spinner>
     </mat-toolbar>
 </mat-card>
-
 <expose1-content-pdf (pdfRendered)="pdfRendered($event)" [pdfSrc]="pdfSrc"></expose1-content-pdf>
 <impressum-component></impressum-component>
